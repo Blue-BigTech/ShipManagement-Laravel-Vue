@@ -1,0 +1,93 @@
+@import "../_variables";
+#Wrapper {
+    font-family: 'Noto Sans JP', sans-serif;
+    .header {
+        padding: getMax(96) getMax(38) getMax(28) getMax(38);
+        .header-menu {
+            height: getMax(60);
+            padding-left: getMax(18);
+            width: getMax(154);
+            .header-menu-button {
+                width: getMax(70);
+            }
+        }
+        .header-logo {
+            width: getMax(294);
+        }
+        .header-login {
+            font-size: getMax(18);
+            line-height: getMax(46);
+            width: getMax(154);
+        }
+    }
+    .main {
+        .main-navi {
+            .main-navi-breadcrumbs {
+                padding: getMax(20) getMax(38) getMax(20) getMax(38);
+                .main-navi-breadcrumbs-item {
+                    font-size: getMax(22);
+                }
+            }
+        }
+    }
+    .navi {
+        .navi-inner {
+            width: getMax(750);
+        }
+        .navi-menu {
+            height: getMax(60);
+            margin: 0 0 getMax(38) getMax(18);
+            width: getMax(70);
+        }
+        .navi-item {
+            font-size: getMax(36);
+            padding: 0 getMax(20);
+        }
+    }
+    .footer {
+        font-size: getMax(26);
+        padding: getMax(60) getMax(38) getMax(40) getMax(38);
+        .footer-area {
+            margin-bottom: getMax(103);
+            .footer-area-headline {
+                font-size: getMax(26);
+                margin-bottom: getMax(40);
+            }
+            .footer-area-category {
+                font-size: getMax(24);
+                margin-bottom: getMax(30);
+            }
+            .footer-area-prefs {
+                margin: 0 0 getMax(15) 0;
+                .footer-area-pref {
+                    font-size: getMax(24);
+                    margin-bottom: getMax(15);
+                }
+            }
+        }
+        .footer-sns {
+            margin: 0 auto getMax(40) auto;
+            width: getMax(345);
+            img {
+                width: getMax(50);
+            }
+        }
+        .footer-menus {
+            > li {
+                margin-bottom: getMax(20) !important;
+                .footer-menu {
+                    margin: 0 getMax(10) 0 0;
+                    padding: 0 getMax(20) 0 0;
+                }
+            }
+        }
+        .footer-links {
+            margin-bottom: getMax(80);
+        }
+        .footer-logo {
+            height: getMax(194);
+            margin: 0 auto getMax(40) auto;
+            width: getMax(237);
+        }
+    }
+}

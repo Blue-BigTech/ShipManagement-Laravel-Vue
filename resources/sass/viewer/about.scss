@@ -1,0 +1,110 @@
+@import "../_variables";
+
+#Wrapper.about {
+    padding: 0px;
+
+    main {
+        .main-logo {
+            height: getVW(426);
+            margin: getVW(80) auto getVW(57) auto;
+            width: getVW(426);
+        }
+
+        .main-headline {
+            color: #0074b6;
+            font-size: getVW(35);
+            font-weight: 700;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .main-greeting {
+            font-size: getVW(26);
+            margin: 0 getVW(38) getVW(64) getVW(38);
+        }
+
+        .main-summary {
+            margin: 0 getVW(38) getVW(120) getVW(38);
+
+            .main-summary-headline {
+                font-size: getVW(26);
+                font-weight: 700;
+                line-height: 1.8;
+                margin-bottom: getVW(64);
+                text-align: center;
+            }
+
+            .main-summary-explain {
+                font-size: getVW(26);
+                margin: 0;
+            }
+        }
+
+        .main-purpose {
+            .main-purpose-headline {
+                color: #03b3d9;
+                font-size: getVW(36);
+                font-weight: 700;
+                margin-bottom: getVW(36);
+                text-align: center;
+            }
+
+            .main-purpose-explain {
+                 margin-bottom: getVW(100);
+
+                .main-purpose-explain-headline {
+                    font-size: getVW(26);
+                    font-weight: 700;
+                    margin-bottom: getVW(6);
+                    text-align: center;
+                }
+
+                .main-purpose-explain-suply {
+                    font-size: getVW(0);
+                    text-align: center;
+                }
+            }
+        }
+
+        .main-wanted {
+            background: #00afec;
+            margin-bottom: getVW(87);
+            padding: getVW(82)  getVW(38) getVW(66) getVW(38);
+            text-align: center;
+
+            .main-wanted-headline {
+                color: #ffffff;
+                font-size: getVW(36);
+                font-weight: 700;
+                margin-bottom: getVW(36);
+            }
+
+            .main-wanted-explain {
+                font-size: getVW(26);
+                font-weight: 700;
+                margin-bottom: getVW(50);
+            }
+        }
+
+        .main-reason {
+            margin: 0 getVW(38) getVW(186) getVW(38);
+
+            .main-reason-headline {
+                color: #03b3d9;
+                font-size: getVW(36);
+                font-weight: 700;
+                margin-bottom: getVW(50);
+                text-align: center;
+            }
+
+            .main-summary-explain {
+                font-size: getVW(26);
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 750px) {
+	@import "max/_about";
+}

@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "formulahendry.auto-close-tag",
+        "streetsidesoftware.code-spell-checker",
+        "dbaeumer.vscode-eslint",
+        "xabikos.javascriptsnippets",
+        "christian-kohler.path-intellisense",
+        "junstyle.php-cs-fixer",
+        "bmewburn.vscode-intelephense-client",
+        "ikappas.phpcs",
+        "esbenp.prettier-vscode",
+        "octref.vetur"
+    ]
+}

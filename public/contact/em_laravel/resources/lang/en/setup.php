@@ -1,0 +1,37 @@
+<?php
+return [
+    /*
+     * setup
+     */
+    'install_url'                         => 'Install URL',
+    'db_setting_info'                     => 'DB setting',
+    'db_connection_comp_msg'              => 'DB setting complete',
+    'db_connection_error_msg'             => 'Can not connected databale.',
+    'db_host'                             => 'Host address',
+    'db_port'                             => 'Port',
+    'db_name'                             => 'Name',
+    'db_username'                         => 'User name',
+    'db_password'                         => 'Pass word',
+    'dash_board_login_info'               => 'Admin dashboard login',
+    'dash_board_login_email'              => 'Login email',
+    'dash_board_login_password'           => 'Login password',
+    'setting_form_submit'                 => 'Submit',
+    'db_host_error_msg'                   => 'Input host address',
+    'db_port_error_msg'                   => 'Input port number',
+    'db_name_error_msg'                   => 'Input database name',
+    'db_username_error_msg'               => 'Input database user name',
+    'db_password_error_msg'               => 'Input database password',
+    'dash_board_login_email_error_msg'    => 'Input dashbord login email',
+    'dash_board_login_password_error_msg' => 'Input dashbord login password',
+    'dash_board_login_comp_msg'           => 'DB setting saved',
+    'dash_board_login_comp_url_msg'       => 'Login',
+    'setup_complete'                      => 'Setting saved',
+    'login'                               => 'Login',
+    'db_url_error_msg'                    => 'Input URL',
+    'db_url_format_error_msg'             => 'Input URL format',
+    'language'                            => 'Language',
+    'language_select'                     => 'Admin dashboard language',
+    'language_select_error_msg'           => 'Select language address',
+    'timezone_select'                     => 'Select time zone',
+    'timezone'                            => 'Time zone',
+];

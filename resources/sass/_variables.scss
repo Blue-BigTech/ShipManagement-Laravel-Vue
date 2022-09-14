@@ -1,0 +1,110 @@
+/*-------------------------------------------*/
+/*  色
+/*-------------------------------------------*/
+$Black: #000;
+$White: #fff;
+$Gray:#aeafac;
+$LightGray: #e0e0e0;
+$Red: #ff3547;
+
+// Definition Color
+$Main: #62a1db;
+$MainLight: #93bde3;
+$MainDark: #2e6a9f;
+$Primary: #9EC22F;
+$PrimaryLight: #fcefa8;
+$Secondary: #9EC22F;
+$Success: #9EC22F;
+$Danger: $Red;
+$Warning: $Red;
+
+/*-------------------------------------------*/
+/*  文字サイズ
+/*-------------------------------------------*/
+$font-xxs: 0.5em;
+$font-xs: 0.75em;
+$font-sm: 0.875em;
+$font-md: 1em;
+$font-lg: 1.25em;
+$font-xl: 1.5em;
+$font-xxl: 1.75em;
+
+$font-form: max(#{ getVW(24)}, 16px);
+
+/*-------------------------------------------*/
+/*  メディアクエリ
+/*-------------------------------------------*/
+$x-large-min: 1201px;
+$x-large: 1200px;
+$large-min: 963px;
+$large: 962px;
+$medium-min: 769px;
+$medium: 768px;
+$small-min: 577px;
+$small: 576px;
+
+@mixin x-large-min {
+    @media (min-width: ($x-large-min)) {
+        @content;
+    }
+}
+@mixin x-large {
+    @media (max-width: ($x-large)) {
+        @content;
+    }
+}
+@mixin large-min {
+    @media (min-width: ($large-min)) {
+        @content;
+    }
+}
+@mixin large {
+    @media (max-width: ($large)) {
+        @content;
+    }
+}
+@mixin medium-min {
+    @media (min-width: ($medium-min)) {
+        @content;
+    }
+}
+@mixin medium {
+    @media (max-width: ($medium)) {
+        @content;
+    }
+}
+@mixin small-min {
+    @media (min-width: ($small-min)) {
+        @content;
+    }
+}
+@mixin small {
+    @media (max-width: ($small)) {
+    @content;
+    }
+}
+
+/*-------------------------------------------*/
+/*
+/*-------------------------------------------*/
+$zindex-dropdown:          1000 !default;
+$zindex-sticky:            1020 !default;
+$zindex-fixed:             1030 !default;
+$zindex-modal-backdrop:    1040 !default;
+$zindex-modal:             1050 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+
+$viewportMax: 750;
+
+@function v($px) {
+	@return getVW($px);
+}
+
+@function getVW($px) {
+	@return ($px / $viewportMax * 100 * 1vw);
+}
+
+@function getMax($px) {
+	@return ($px * 750 / $viewportMax * 1px);
+}

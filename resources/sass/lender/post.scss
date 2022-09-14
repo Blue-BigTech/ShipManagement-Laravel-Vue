@@ -1,0 +1,161 @@
+@import "../_variables";
+
+#Wrapper.post {
+    .header-lender {
+        margin-bottom: getVW(50);
+    }
+
+    .main {
+        .main-form {
+            font-size: getVW(24);
+            padding: getVW(20);
+
+            .ex-collapses {
+                margin-bottom: getVW(30);
+            }
+
+            .main-form-element {
+                margin-bottom: getVW(30);
+
+                &.ex-separate {
+                    &::before {
+                        border-top: 1px solid #000000;
+                        content: "";
+                        display: block;
+                        height: getVW(30);
+                        margin: 0 getVW(-20);
+                    }
+                }
+
+                &.ex-collapse {
+                    margin-bottom: getVW(0);
+                }
+
+                &.ex-flex {
+                    align-items: flex-start;
+                    display: flex;
+
+                    > dt {
+                        line-height: 1;
+                        margin-right: getVW(24);
+                    }
+                }
+
+                label {
+                    font-weight: 700;
+                    line-height: 1;
+                    margin-bottom: getVW(14) !important;
+                    padding: 0;
+                    position: relative;
+
+                    &.ex-collapse {
+                        border-bottom: 1px solid #cbcbcb;
+                        border-top: 1px solid #cbcbcb;
+                        line-height: getVW(89);
+                        margin-bottom: -1px;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            border: getVW(12) solid transparent;
+                            border-top: getVW(12) solid #979698;
+                            top: 50%;
+                            transform: translate(0, -25%) rotate(0deg);
+                            transform-origin: 50% 25%;
+                            transition-duration: 0.2s;
+                            right: getVW(20);
+                            z-index: 1;
+                        }
+
+                        &.collapsed {
+                            &::before {
+                                transform: translate(0, -25%) rotate(-90deg);
+                            }
+
+                        }
+                    }
+                }
+
+                > div {
+                    margin: 0;
+
+                    &.ex-chink {
+                        margin-top: getVW(30);
+                    }
+
+                    &.ex-change {
+                        display: table;
+                        margin: auto;
+                        padding: getVW(45) 0 getVW(70) 0;
+                        text-align: center;
+                    }
+
+                    .ex-collapse-inner {
+                        padding: getVW(40) getVW(30) getVW(10) getVW(30);
+                    }
+                }
+
+                .main-form-element-images {
+                    padding: getVW(25) 0 0 0;
+
+                    .row {
+                        margin: 0px getVW(-12.5);
+
+                        .ex-file {
+                            padding: 0;
+                            margin: 0px getVW(12.5) getVW(25) getVW(12.5);
+                            max-width: getVW(220);
+                            min-width: getVW(220);
+
+                            > div {
+                                position: relative;
+                            }
+                            
+                            .ex-file-inner {
+                                background: url(/images/lender/icon_image2.svg) center no-repeat;
+                                background-size: contain;
+                                border-radius: 0;
+                                height: getVW(220);
+                                width: getVW(220);
+
+                                &::before {
+                                    display: none;
+                                }
+
+                                > span {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .ex-preview {
+                            margin: 0;
+                            position: absolute;
+
+                            .ex-preview-inner {
+                                align-items: center;
+                                background: #ffffff;
+                                display: flex;
+                                justify-content: center;
+                                height: getVW(220);
+                                width: getVW(220);
+                            }
+
+                            .ex-preview-name {
+                                display: none;
+                            }
+
+                            .ex-preview-close {
+                                z-index: 10;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 750px) {
+    @import "max/_post";
+}

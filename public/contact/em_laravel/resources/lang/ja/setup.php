@@ -1,0 +1,37 @@
+<?php
+return [
+    /*
+     * setup
+     */
+    'install_url'                         => 'インストール先 URL',
+    'db_setting_info'                     => 'DB設定',
+    'db_connection_comp_msg'              => 'DB接続が完了しました。',
+    'db_connection_error_msg'             => 'DB接続ができませんでした。設定をご確認ください',
+    'db_host'                             => 'ホストアドレス',
+    'db_port'                             => 'ポート',
+    'db_name'                             => 'データベース名',
+    'db_username'                         => 'ユーザー名',
+    'db_password'                         => 'パスワード',
+    'dash_board_login_info'               => '管理画面情報登録',
+    'dash_board_login_email'              => 'ログインメールアドレス',
+    'dash_board_login_password'           => 'ログインパスワード',
+    'setting_form_submit'                 => '設定する',
+    'db_host_error_msg'                   => 'ホストアドレスを入力してください',
+    'db_port_error_msg'                   => 'ポートを入力してください',
+    'db_name_error_msg'                   => 'データベース名を入力してください',
+    'db_username_error_msg'               => 'ユーザー名を入力してください',
+    'db_password_error_msg'               => 'パスワードを入力してください',
+    'dash_board_login_email_error_msg'    => 'ログインメールアドレスを入力してください',
+    'dash_board_login_password_error_msg' => 'ログインパスワードを入力してください',
+    'dash_board_login_comp_msg'           => '登録が完了しました',
+    'dash_board_login_comp_url_msg'       => '下記よりログインできます',
+    'setup_complete'                      => '登録完了',
+    'login'                               => 'ログイン',
+    'db_url_error_msg'                    => 'URLを入力してください',
+    'db_url_format_error_msg'             => 'URL形式で入力してください',
+    'language'                            => '言語',
+    'language_select'                     => '管理画面言語選択',
+    'language_select_error_msg'           => '言語を選択してください',
+    'timezone_select'                     => 'タイムゾーン選択',
+    'timezone'                            => 'タイムゾーン',
+];

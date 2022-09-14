@@ -1,0 +1,462 @@
+@import "../_variables";
+
+#Wrapper.provider {
+	padding: 0px;
+
+	.main {
+		.main-summary {
+			margin-bottom: getVW(48);
+
+			.main-summary-overview {
+				padding: 0 getVW(38);
+
+				.main-summary-overview-name {
+					font-size: getVW(40);
+					font-weight: 700;
+				}
+
+				.main-summary-overview-port {
+					font-size: getVW(24);
+					font-weight: 700;
+
+					.main-summary-overview-port-address {
+						color: #666666;
+						font-size: getVW(24);
+						font-weight: 400;
+						padding-left: getVW(10);
+					}
+				}
+			}
+
+			.main-summary-slides {
+				margin: 0 getVW(38) getVW(30) getVW(38);
+
+				.main-summary-slide-item {
+					align-items: center;
+					display: flex;
+					justify-content: center;
+
+					.main-summary-slide-item-inner {
+						height: getVW(430);
+						text-align: center;
+						width: getVW(640);
+
+						> img {
+							border-radius: 12px;
+							max-height: 100%;
+						}
+					}
+				}
+
+				.main-summary-slides-arrow {
+					background: center no-repeat;
+					background-size: contain;
+					height: getVW(94);
+					top: 50%;
+					transform: translate(-50%, -50%);
+					width: getVW(60);
+
+					&.ex-prev {
+						background-image: url(/images/boatDetail/arrow_prev.svg);
+						transform: translate(-50%, -50%);
+					}
+
+					&.ex-next {
+						background-image: url(/images/boatDetail/arrow_next.svg);
+						transform: translate(50%, -50%);
+					}
+				}
+			}
+
+			.main-summary-facilities {
+				margin: 0 getVW(38) getVW(30) getVW(38);
+
+				.main-summary-facility {
+					flex: 0 1 auto;
+					margin: 0;
+					max-width: 16.666666%;
+					padding: 0;
+					width: auto;
+
+					.main-summary-facility-name {
+						font-size: getVW(17);
+						text-align: center;
+					}
+				}
+			}
+
+			.main-summary-information {
+				align-items: flex-end;
+				background: #f1f1f1;
+				display: flex;
+				padding: getVW(30) getVW(38);
+
+				.main-summary-information-items {
+					.main-summary-information-item {
+						margin: 0;
+
+						> dt {
+							color: #0074b6;
+							font-size: getVW(24);
+							font-weight: 400;
+							padding: 0;
+						}
+
+						> dd {
+							color: #0074b6;
+							font-size: getVW(24);
+							font-weight: 400;
+							padding: 0;
+						}
+					}
+
+					.main-summary-information-tell {
+						display: flex;
+						font-size: getVW(24);
+						font-weight: 700;
+
+						&::before {
+							background: url(/images/list/icon_tell.svg) center no-repeat;
+							background-size: contain;
+							content: "";
+							display: block;
+							height: getVW(30);
+							width: getVW(18);
+						}
+					}
+				}
+
+				.main-summary-information-call {
+					width: getVW(182);
+				}
+			}
+		}
+
+		.main-tabs {
+			font-size: getVW(24);
+			margin: 0 getVW(38);
+			margin-bottom: getVW(38);
+
+			.main-tab {
+				text-align: center;
+				width: 25%;
+
+				.main-tab-link {
+					border: none;
+					border-bottom: getVW(6) solid transparent;
+					color: #969497;
+					font-size: getVW(24);
+					font-weight: 700;
+					line-height: 1;
+					padding: getVW(16);
+
+					&.active {
+						border-bottom: getVW(6) solid #0074b6;
+						color: #0074b6;
+					}
+				}
+			}
+		}
+
+		.main-tab {
+			.ex-headline {
+				align-items: center;
+				border-bottom: 1px solid #cacaca;
+				display: flex;
+				font-size: getVW(30);
+				font-weight: 700;
+				line-height: 1.5;
+				margin-bottom: getVW(22);
+				padding-bottom: getVW(5);
+
+				&::before {
+					background: url(/images/boatDetail/icon_headline.svg) center no-repeat;
+					background-size: contain;
+					content: "";
+					display: block;
+					height: getVW(38);
+					margin-right: getVW(12);
+					width: getVW(29);
+				}
+			}
+
+			.main-tab-information {
+				margin-bottom: getVW(56);
+				padding: 0 getVW(38);
+
+				.main-tab-information-comment-content {
+					font-size: getVW(24);
+					margin: 0;
+					white-space: pre-line;
+				}
+
+				.main-tab-information-target {
+					margin-bottom: getVW(56);
+
+					.main-tab-information-target-content {
+						font-size: getVW(24);
+						margin: 0;
+						white-space: pre-line;
+					}
+
+					.main-tab-information-target-items {
+						font-size: getVW(24);
+						padding: 0 getVW(24);
+
+						.main-tab-information-target-item {
+							margin: 0;
+
+							.main-tab-information-target-item-index {
+								margin: 0;
+								padding: 0;
+							}
+
+							.main-tab-information-target-item-value {
+								margin: 0;
+								padding: 0;
+							}
+						}
+					}
+				}
+
+				.main-tab-information-other {
+					.main-tab-information-other-headline {
+						margin-bottom: 0;
+					}
+
+					.main-tab-information-other-items {
+						padding: 0;
+
+						.main-tab-information-other-item {
+							border-bottom: 1px solid #cacaca;
+							font-size: getVW(24);
+							margin: 0;
+
+							.main-tab-information-other-item-index {
+								background: #f0f0f0;
+								color: #0074b6;
+								padding: getVW(10);
+							}
+
+							.main-tab-information-other-item-value {
+								margin: 0;
+								padding: getVW(10);
+							}
+						}
+					}
+				}
+			}
+
+			.main-tab-plan {
+				padding: 0 getVW(38);
+
+				.main-tab-plan-items {
+					margin-bottom: getVW(42);
+					padding: 0;
+
+					.main-tab-plan-item {
+						font-size: getVW(24);
+						margin: 0;
+						padding: 0;
+
+						> dt {
+							color: #0074b6;
+							padding: 0;
+						}
+
+						> dd {
+							margin: 0;
+							padding: 0;
+						}
+					}
+				}
+
+				.main-tab-plan-view {
+					background: #969497;
+					border-radius: 12px;
+					color: #ffffff;
+					font-size: getVW(24);
+					line-height: getVW(74);
+					margin: auto;
+					margin-bottom: getVW(38);
+					text-align: center;
+					width: getVW(379);
+				}
+
+				.main-tab-plan-modal {
+					.main-tab-plan-modal-content {
+						background: #ffffff;
+						border-radius: 12px;
+						padding: getVW(20) getVW(38);
+
+						.main-tab-plan-modal-content-close {
+							height: getVW(32);
+							margin-left: auto;
+							width: getVW(32);
+
+							> img {
+								vertical-align: top;
+							}
+						}
+
+						.main-tab-plan-modal-content-explain {
+							font-size: getVW(24);
+							margin-bottom: getVW(38);
+							white-space: pre-line;
+						}
+
+						.main-tab-plan-modal-content-items {
+							border-top: 1px solid #cacaca;
+							padding: 0;
+
+							.main-tab-plan-modal-content-item {
+								border-bottom: 1px solid #cacaca;
+								font-size: getVW(24);
+								margin: 0;
+								padding: getVW(20) 0;
+
+								> dt {
+									color: #0074b6;
+									padding: 0;
+								}
+
+								> dd {
+									margin: 0;
+									padding: 0;
+								}
+							}
+						}
+
+						.main-tab-plan-modal-content-note {
+							font-size: getVW(24);
+
+							> dt {
+								color: #0074b6;
+								padding: getVW(20) 0;
+							}
+						}
+					}
+				}
+			}
+
+			.main-tab-result {
+				font-size: getVW(24);
+				padding: 0 getVW(38);
+
+				.main-tab-result-items {
+					margin-bottom: getVW(25);
+					padding: 0;
+
+					.main-tab-result-date {
+						color: #969497;
+						margin: 0;
+						margin-bottom: getVW(25);
+						padding: 0;
+
+						> dt {
+							padding: 0;
+						}
+
+						dd {
+							margin: 0;
+						}
+					}
+
+					.main-tab-result-headline {
+						border-bottom: 1px solid #cacaca;
+						color: #0074b6;
+						font-size: getVW(30);
+						margin-bottom: getVW(25);
+						padding: 0;
+						padding-bottom: getVW(25);
+					}
+
+					.main-tab-result-item {
+						margin: 0;
+						padding: 0;
+
+						> dt {
+							color: #0074b6;
+							padding: 0;
+						}
+
+						dd {
+							margin: 0;
+						}
+					}
+				}
+
+				.main-tab-result-slides {
+					margin-bottom: getVW(60);
+
+					.main-tab-result-slide-item {
+						align-items: center;
+						display: flex;
+						justify-content: center;
+
+						.main-tab-result-slide-item-inner {
+							height: getVW(320);
+							text-align: center;
+							width: getVW(520);
+
+							> img {
+								border-radius: 12px;
+								max-height: 100%;
+							}
+						}
+					}
+
+					.main-tab-result-slides-arrow {
+						background: center no-repeat;
+						background-size: contain;
+						height: getVW(94);
+						top: 50%;
+						transform: translate(-50%, -50%);
+						width: getVW(60);
+
+						&.ex-prev {
+							background-image: url(/images/boatDetail/arrow_result_prev.svg);
+							transform: translate(0%, -50%);
+						}
+
+						&.ex-next {
+							background-image: url(/images/boatDetail/arrow_result_next.svg);
+							transform: translate(0%, -50%);
+						}
+					}
+				}
+			}
+
+			.main-tab-access {
+				margin-bottom: getVW(120);
+				padding: 0 getVW(38);
+
+				.main-tab-access-explain {
+					font-size: getVW(24);
+					margin-bottom: getVW(54);
+				}
+
+				.main-tab-access-map {
+					height: v(495);
+					margin: 0 v(-38);
+					position: relative;
+					width: v(750);
+
+					> iframe {
+						bottom: 0;
+						height: 100%;
+						left: 0;
+						position: absolute;
+						right: 0;
+						top: 0;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 750px) {
+	@import "max/_boatDetail";
+}

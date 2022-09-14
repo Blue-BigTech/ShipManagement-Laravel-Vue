@@ -1,0 +1,166 @@
+@import "../_variables";
+#Wrapper {
+    .ex-recommend {
+        .ex-recommend-headline {
+            font-size: getMax(30);
+            height: getMax(50);
+            margin-bottom: getMax(40);
+            margin-top: getMax(22);
+            > span {
+                padding-right: getMax(76);
+            }
+            &::before {
+                height: getMax(34);
+                margin: 0 getMax(10);
+                width: getMax(56);
+            }
+            &::after {
+                height: getMax(8);
+                padding-top: getMax(20);
+                width: getMax(750);
+            }
+        }
+        .ex-recommend-item {
+            margin-bottom: getMax(30);
+            padding: getMax(22) getMax(26);
+            .ex-recommend-item-summary {
+                > dl {
+                    margin-bottom: getMax(20);
+                }
+                .ex-recommend-item-summary-icon {
+                    height: getMax(105);
+                    margin-right: getMax(20);
+                    width: getMax(105);
+                }
+                .ex-recommend-item-summary-name {
+                    font-size: getMax(30);
+                    margin-bottom: getMax(0);
+                }
+                .ex-recommend-item-summary-port {
+                    font-size: getMax(22);
+                    margin-bottom: getMax(0);
+                }
+                .ex-recommend-item-summary-review {
+                    font-size: getMax(22);
+                    margin-bottom: getMax(0);
+                }
+            }
+            .ex-recommend-item-information {
+                margin-bottom: getMax(20);
+                &.ex-line {
+                    margin-bottom: getMax(20);
+                    padding-bottom: getMax(20);
+                }
+                .ex-recommend-item-information-image {
+                    margin-right: getMax(20);
+                    width: getMax(246);
+                }
+                .ex-recommend-item-information-items {
+                    .ex-recommend-item-information-item {
+                        margin-bottom: getMax(0);
+                        > dt {
+                            font-size: getMax(24);
+                            margin-bottom: getMax(0);
+                        }
+                        > dd {
+                            font-size: getMax(24);
+                            margin-bottom: getMax(0);
+                        }
+                    }
+                }
+                .ex-recommend-item-information-pr {
+                    margin: 0 getMax(38) 0 0;
+                    .ex-recommend-item-information-pr-headline {
+                        font-size: getMax(24);
+                        margin-bottom: getMax(22);
+                        &::before {
+                            height: getMax(30);
+                            width: getMax(30);
+                        }
+                    }
+                    .ex-recommend-item-information-pr-comment {
+                        font-size: getMax(24);
+                        margin-bottom: getMax(22);
+                    }
+                    .ex-recommend-item-information-pr-tell {
+                        font-size: getMax(24);
+                        &::before {
+                            height: getMax(30);
+                            width: getMax(18);
+                        }
+                    }
+                }
+                .ex-recommend-item-information-call {
+                    min-width: getMax(182);
+                }
+            }
+            .ex-recommend-item-detail {
+                font-size: getMax(24);
+                line-height: getMax(74);
+                width: getMax(694);
+            }
+        }
+    }
+    .ex-search {
+        margin-bottom: getMax(38);
+        .ex-search-headline {
+            font-size: getMax(30);
+            min-height: getMax(50);
+            margin-bottom: getMax(40);
+            margin-top: getMax(22);
+            > span {
+                padding-right: getMax(76);
+            }
+            &::before {
+                height: getMax(34);
+                margin: 0 getMax(10);
+                width: getMax(56);
+            }
+            &::after {
+                height: getMax(8);
+                padding-top: getMax(20);
+                width: getMax(750);
+            }
+        }
+        .ex-search-dropdown {
+            font-size: getMax(30);
+            height: getMax(92);
+            width: getMax(750);
+            &::before {
+                width: getMax(62);
+            }
+            &::after {
+                padding: 0 getMax(16);
+            }
+        }
+        .ex-search-choice {
+            width: getMax(750);
+            .ex-search-choice-items {
+                width: getMax(750);
+                .ex-search-choice-item {
+                    font-size: getMax(30);
+                }
+            }
+        }
+    }
+    .ex-wanted {
+        height: getMax(443);
+        width: getMax(682);
+        .ex-wanted-title {
+            font-size: getMax(40);
+            padding: getMax(42) 0 getMax(90) 0;
+        }
+        .ex-wanted-current {
+            font-size: getMax(30);
+            padding: 0 0 getMax(10) 0;
+        }
+        .ex-wanted-count {
+            .ex-wanted-count-number {
+                font-size: getMax(100);
+            }
+            .ex-wanted-count-unit {
+                font-size: getMax(30);
+            }
+        }
+    }
+}

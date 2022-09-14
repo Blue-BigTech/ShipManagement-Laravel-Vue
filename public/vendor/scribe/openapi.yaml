@@ -1,0 +1,3954 @@
+openapi: 3.0.3
+info:
+    title: Laravel
+    description: ''
+    version: 1.0.0
+servers:
+    -
+        url: 'http://localhost:8080'
+paths:
+    /api/login:
+        post:
+            summary: 顧客担当者ログイン
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 認証情報が正しくありません
+                                properties:
+                                    message: { type: string, example: 認証情報が正しくありません }
+            tags:
+                - Auth
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                email:
+                                    type: string
+                                    description: valueは、有効なメールアドレス形式で指定してください。.
+                                    example: arempel@example.org
+                                password:
+                                    type: string
+                                    description: ''
+                                    example: cum
+                            required:
+                                - email
+                                - password
+            security: []
+    /sanctum/csrf-cookie:
+        get:
+            summary: 'Return an empty response simply to trigger the storage of the CSRF cookie in the browser.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/api/users/{user_id}/logout':
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Argument 1 passed to App\Http\Controllers\Api\AuthController::logout() must be of the type int, string given, called in /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Controller.php on line 54'
+                                    exception: TypeError
+                                    file: /var/www/hasegawa_koryo/app/Http/Controllers/Api/AuthController.php
+                                    line: 29
+                                    trace: [{ file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Controller.php, line: 54, function: logout, class: App\Http\Controllers\Api\AuthController, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php, line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Route.php, line: 254, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Route.php, line: 197, function: runController, class: Illuminate\Routing\Route, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 693, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php, line: 50, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 127, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 103, function: handleRequest, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 55, function: handleRequestUsingNamedLimiter, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 695, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 670, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 636, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 625, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php, line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php, line: 86, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/fruitcake/laravel-cors/src/HandleCors.php, line: 52, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/fideloper/proxy/src/TrustProxies.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Container/Container.php, line: 610, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/symfony/console/Command/Command.php, line: 256, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/symfony/console/Application.php, line: 971, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/symfony/console/Application.php, line: 290, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/symfony/console/Application.php, line: 166, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Console/Application.php, line: 92, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php, line: 129, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /var/www/hasegawa_koryo/artisan, line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Argument 1 passed to App\Http\Controllers\Api\AuthController::logout() must be of the type int, string given, called in /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Controller.php on line 54' }
+                                    exception: { type: string, example: TypeError }
+                                    file: { type: string, example: /var/www/hasegawa_koryo/app/Http/Controllers/Api/AuthController.php }
+                                    line: { type: integer, example: 29 }
+                                    trace: { type: array, example: [{ file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Controller.php, line: 54, function: logout, class: App\Http\Controllers\Api\AuthController, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php, line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Route.php, line: 254, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Route.php, line: 197, function: runController, class: Illuminate\Routing\Route, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 693, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php, line: 50, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 127, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 103, function: handleRequest, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 55, function: handleRequestUsingNamedLimiter, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 695, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 670, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 636, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 625, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php, line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php, line: 86, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/fruitcake/laravel-cors/src/HandleCors.php, line: 52, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/fideloper/proxy/src/TrustProxies.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Container/Container.php, line: 610, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/symfony/console/Command/Command.php, line: 256, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/symfony/console/Application.php, line: 971, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/symfony/console/Application.php, line: 290, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/symfony/console/Application.php, line: 166, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Console/Application.php, line: 92, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/hasegawa_koryo/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php, line: 129, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /var/www/hasegawa_koryo/artisan, line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: user_id
+                description: ''
+                example: et
+                required: true
+                schema:
+                    type: string
+    /api/admin/login:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 認証情報が正しくありません
+                                properties:
+                                    message: { type: string, example: 認証情報が正しくありません }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                email:
+                                    type: string
+                                    description: valueは、有効なメールアドレス形式で指定してください。.
+                                    example: zion.conn@example.org
+                                password:
+                                    type: string
+                                    description: ''
+                                    example: enim
+                            required:
+                                - email
+                                - password
+            security: []
+    /api/login/user:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"success\": true,\n}"
+            tags:
+                - Endpoints
+    '/api/users/{id}/admin':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        patch:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: voluptas
+                                email:
+                                    type: string
+                                    description: valueは、有効なメールアドレス形式で指定してください。.
+                                    example: kuhn.frankie@example.org
+                                role_type:
+                                    type: integer
+                                    description: ''
+                                    example: 14
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 19
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 16
+                            required:
+                                - name
+                                - email
+            security: []
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: cum
+                required: true
+                schema:
+                    type: string
+    /api/users/admin:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: voluptatum
+                                email:
+                                    type: string
+                                    description: valueは、有効なメールアドレス形式で指定してください。.
+                                    example: yasmin.friesen@example.com
+                                role_type:
+                                    type: integer
+                                    description: ''
+                                    example: 14
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 18
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 18
+                            required:
+                                - name
+                                - email
+            security: []
+    '/api/users/{id}/admin/edit':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: saepe
+                required: true
+                schema:
+                    type: string
+    /api/users:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    '/api/users/{user}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: user
+                description: ''
+                example: dolores
+                required: true
+                schema:
+                    type: string
+    '/api/users/{id}/change/password':
+        patch:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                password:
+                                    type: string
+                                    description: ''
+                                    example: et
+                            required:
+                                - password
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: aut
+                required: true
+                schema:
+                    type: string
+    /api/contacts:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                content:
+                                    type: string
+                                    description: ''
+                                    example: ipsam
+                            required:
+                                - content
+            security: []
+    /api/shipping-addresses:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                client_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 2
+                                address:
+                                    type: string
+                                    description: ''
+                                    example: praesentium
+                                postal_code:
+                                    type: string
+                                    description: ''
+                                    example: vitae
+                                building:
+                                    type: string
+                                    description: ''
+                                    example: aut
+                                receiver_name:
+                                    type: string
+                                    description: ''
+                                    example: laboriosam
+                                phone:
+                                    type: string
+                                    description: ''
+                                    example: {  }
+                                is_default:
+                                    type: boolean
+                                    description: ''
+                                    example: false
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 10
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 3
+                            required:
+                                - client_user_id
+                                - address
+                                - postal_code
+            security: []
+    '/api/shipping-addresses/{shipping_address}':
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                client_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 6
+                                address:
+                                    type: string
+                                    description: ''
+                                    example: incidunt
+                                postal_code:
+                                    type: string
+                                    description: ''
+                                    example: excepturi
+                                building:
+                                    type: string
+                                    description: ''
+                                    example: laborum
+                                receiver_name:
+                                    type: string
+                                    description: ''
+                                    example: nihil
+                                phone:
+                                    type: string
+                                    description: ''
+                                    example: {  }
+                                is_default:
+                                    type: boolean
+                                    description: ''
+                                    example: false
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 20
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 11
+                            required:
+                                - client_user_id
+                                - address
+                                - postal_code
+            security: []
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: shipping_address
+                description: ''
+                example: ratione
+                required: true
+                schema:
+                    type: string
+    /api/flavors/category/nested/subcategory/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/flavors/category/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/flavors/subcategory/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/dangerous-grades/category/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/solubilities/category/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/solubilities/category/list/by/company-group:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/use-cases/category/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/use-cases/subcategory/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/use-cases/category/with/subcategory/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/products:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                code:
+                                    type: string
+                                    description: ''
+                                    example: eos
+                                prescription_number:
+                                    type: string
+                                    description: ''
+                                    example: sint
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: velit
+                                point:
+                                    type: string
+                                    description: ''
+                                    example: qui
+                                externally_point:
+                                    type: string
+                                    description: ''
+                                    example: provident
+                                image:
+                                    type: string
+                                    description: ''
+                                    example: {  }
+                                sales_status:
+                                    type: integer
+                                    description: ''
+                                    example: 3
+                                is_general_purpose_products:
+                                    type: boolean
+                                    description: ''
+                                    example: false
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 7
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 7
+                                classifications:
+                                    type: array
+                                    description: ''
+                                    example: [[]]
+                                    items: { type: object, properties: { id: { type: integer, description: '', example: 16 } }, required: [id] }
+                                flavors:
+                                    type: array
+                                    description: ''
+                                    example: [[]]
+                                    items: { type: object, properties: { id: { type: integer, description: '', example: 8 } }, required: [id] }
+                                use_cases:
+                                    type: array
+                                    description: ''
+                                    example: [[]]
+                                    items: { type: object, properties: { id: { type: integer, description: '', example: 10 } }, required: [id] }
+                                solubilities:
+                                    type: array
+                                    description: ''
+                                    example: [[]]
+                                    items: { type: object, properties: { id: { type: integer, description: '', example: 11 } }, required: [id] }
+                                dangerous_grades:
+                                    type: array
+                                    description: ''
+                                    example: [[]]
+                                    items: { type: object, properties: { id: { type: integer, description: '', example: 17 } }, required: [id] }
+                            required:
+                                - code
+                                - prescription_number
+                                - name
+                                - point
+                                - externally_point
+            security: []
+    '/api/products/{product}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                code:
+                                    type: string
+                                    description: ''
+                                    example: sint
+                                prescription_number:
+                                    type: string
+                                    description: ''
+                                    example: ut
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: architecto
+                                point:
+                                    type: string
+                                    description: ''
+                                    example: quasi
+                                externally_point:
+                                    type: string
+                                    description: ''
+                                    example: velit
+                                image:
+                                    type: string
+                                    description: ''
+                                    example: {  }
+                                sales_status:
+                                    type: integer
+                                    description: ''
+                                    example: 17
+                                is_general_purpose_products:
+                                    type: boolean
+                                    description: ''
+                                    example: false
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 8
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 11
+                                classifications:
+                                    type: array
+                                    description: ''
+                                    example: [[]]
+                                    items: { type: object, properties: { id: { type: integer, description: '', example: 6 } }, required: [id] }
+                                flavors:
+                                    type: array
+                                    description: ''
+                                    example: [[]]
+                                    items: { type: object, properties: { id: { type: integer, description: '', example: 5 } }, required: [id] }
+                                use_cases:
+                                    type: array
+                                    description: ''
+                                    example: [[]]
+                                    items: { type: object, properties: { id: { type: integer, description: '', example: 3 } }, required: [id] }
+                                solubilities:
+                                    type: array
+                                    description: ''
+                                    example: [[]]
+                                    items: { type: object, properties: { id: { type: integer, description: '', example: 3 } }, required: [id] }
+                                dangerous_grades:
+                                    type: array
+                                    description: ''
+                                    example: [[]]
+                                    items: { type: object, properties: { id: { type: integer, description: '', example: 12 } }, required: [id] }
+                            required:
+                                - code
+                                - prescription_number
+                                - name
+                                - point
+                                - externally_point
+            security: []
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: product
+                description: ''
+                example: aperiam
+                required: true
+                schema:
+                    type: string
+    /api/products/image/upload:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/products/image/delete:
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/products/search/results:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/products/by/company-groups:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/products/correspondence-analysis-results:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    '/api/products/{id}/comments':
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: iste
+                required: true
+                schema:
+                    type: string
+    /api/orders:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                client_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 18
+                                shipping_address_id:
+                                    type: integer
+                                    description: ''
+                                    example: 6
+                                desired_arrival_date:
+                                    type: string
+                                    description: valueは、正しい日付ではありません。.
+                                    example: '2021-05-20T17:18:20+0900'
+                                comment:
+                                    type: string
+                                    description: ''
+                                    example: consequatur
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 13
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 2
+                            required:
+                                - client_user_id
+                                - shipping_address_id
+                                - desired_arrival_date
+                                - created_user_id
+            security: []
+    '/api/orders/{order}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: order
+                description: ''
+                example: explicabo
+                required: true
+                schema:
+                    type: string
+    '/api/orders/client-users/{clientUserId}/histories':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: clientUserId
+                description: ''
+                example: modi
+                required: true
+                schema:
+                    type: string
+    /api/orders/all/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/orders/output/csv:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/order-carts:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                client_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 9
+                                product_id:
+                                    type: integer
+                                    description: ''
+                                    example: 10
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 5
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 5
+                            required:
+                                - client_user_id
+                                - product_id
+                                - created_user_id
+            security: []
+    '/api/order-carts/{order_cart}':
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: order_cart
+                description: ''
+                example: perspiciatis
+                required: true
+                schema:
+                    type: string
+    /api/order-units/unit/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/company-groups:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                code:
+                                    type: string
+                                    description: ''
+                                    example: veniam
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: occaecati
+                                externally_name:
+                                    type: string
+                                    description: ''
+                                    example: fuga
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 14
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 5
+                            required:
+                                - code
+                                - name
+                                - externally_name
+            security: []
+    '/api/company-groups/{company_group}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                code:
+                                    type: string
+                                    description: ''
+                                    example: eos
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: reprehenderit
+                                externally_name:
+                                    type: string
+                                    description: ''
+                                    example: eum
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 8
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 1
+                            required:
+                                - code
+                                - name
+                                - externally_name
+            security: []
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: company_group
+                description: ''
+                example: et
+                required: true
+                schema:
+                    type: string
+    /api/company-groups/name/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    '/api/company-groups/{id}/sales-members':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: voluptatibus
+                required: true
+                schema:
+                    type: string
+    '/api/company-groups/{id}/sales-members/{salesMemberId}':
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: fugiat
+                required: true
+                schema:
+                    type: string
+            -
+                in: path
+                name: salesMemberId
+                description: ''
+                example: quasi
+                required: true
+                schema:
+                    type: string
+    '/api/company-groups/{id}/products':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: voluptatibus
+                required: true
+                schema:
+                    type: string
+    '/api/company-groups/{id}/products/{productId}':
+        patch:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                company_group_id:
+                                    type: integer
+                                    description: ''
+                                    example: 13
+                                product_id:
+                                    type: integer
+                                    description: ''
+                                    example: 5
+                                is_display:
+                                    type: boolean
+                                    description: ''
+                                    example: false
+                            required:
+                                - company_group_id
+                                - product_id
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: molestias
+                required: true
+                schema:
+                    type: string
+            -
+                in: path
+                name: productId
+                description: ''
+                example: enim
+                required: true
+                schema:
+                    type: string
+    '/api/company-groups/{id}/products/{salesMemberId}':
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: asperiores
+                required: true
+                schema:
+                    type: string
+            -
+                in: path
+                name: salesMemberId
+                description: ''
+                example: delectus
+                required: true
+                schema:
+                    type: string
+    '/api/company-groups/{id}/products/output/csv':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: est
+                required: true
+                schema:
+                    type: string
+    /api/companies:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                company_group_id:
+                                    type: integer
+                                    description: ''
+                                    example: 2
+                                code:
+                                    type: string
+                                    description: ''
+                                    example: ut
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: corporis
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 20
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 8
+                            required:
+                                - company_group_id
+                                - code
+                                - name
+            security: []
+    '/api/companies/{company}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                company_group_id:
+                                    type: integer
+                                    description: ''
+                                    example: 17
+                                code:
+                                    type: string
+                                    description: ''
+                                    example: tempora
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: quasi
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 20
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 13
+                            required:
+                                - company_group_id
+                                - code
+                                - name
+            security: []
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: company
+                description: ''
+                example: dolor
+                required: true
+                schema:
+                    type: string
+    /api/client-users:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                company_id:
+                                    type: integer
+                                    description: ''
+                                    example: 15
+                                user:
+                                    type: object
+                                    description: ''
+                                    example: []
+                                    properties: { name: { type: string, description: '', example: corrupti } }
+                                ip_address:
+                                    type: string
+                                    description: valueには、有効なIPアドレスを指定してください。.
+                                    example: 53.141.239.145
+                                start_date:
+                                    type: string
+                                    description: valueは、正しい日付ではありません。.
+                                    example: '2021-05-20T17:18:21+0900'
+                                end_date:
+                                    type: string
+                                    description: valueは、正しい日付ではありません。.
+                                    example: '2021-05-20T17:18:21+0900'
+                                phone:
+                                    type: string
+                                    description: ''
+                                    example: {  }
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 2
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 20
+                            required:
+                                - company_id
+                                - ip_address
+                                - start_date
+                                - end_date
+            security: []
+    '/api/client-users/{client_user}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                company_id:
+                                    type: integer
+                                    description: ''
+                                    example: 3
+                                user:
+                                    type: object
+                                    description: ''
+                                    example: []
+                                    properties: { name: { type: string, description: '', example: aliquam } }
+                                ip_address:
+                                    type: string
+                                    description: valueには、有効なIPアドレスを指定してください。.
+                                    example: 56.80.88.3
+                                start_date:
+                                    type: string
+                                    description: valueは、正しい日付ではありません。.
+                                    example: '2021-05-20T17:18:21+0900'
+                                end_date:
+                                    type: string
+                                    description: valueは、正しい日付ではありません。.
+                                    example: '2021-05-20T17:18:21+0900'
+                                phone:
+                                    type: string
+                                    description: ''
+                                    example: {  }
+                                created_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 15
+                                updated_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 20
+                            required:
+                                - company_id
+                                - ip_address
+                                - start_date
+                                - end_date
+            security: []
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: client_user
+                description: ''
+                example: hic
+                required: true
+                schema:
+                    type: string
+    '/api/client-users/{id}/tos-agreed-date-time':
+        patch:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: qui
+                required: true
+                schema:
+                    type: string
+    /api/sales-members:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: laboriosam
+                                email:
+                                    type: string
+                                    description: valueは、有効なメールアドレス形式で指定してください。.
+                                    example: cassie88@example.com
+                                department:
+                                    type: string
+                                    description: ''
+                                    example: minima
+                            required:
+                                - name
+                                - email
+                                - department
+            security: []
+    '/api/sales-members/{sales_member}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: qui
+                                email:
+                                    type: string
+                                    description: valueは、有効なメールアドレス形式で指定してください。.
+                                    example: dlangworth@example.org
+                                department:
+                                    type: string
+                                    description: ''
+                                    example: fugiat
+                            required:
+                                - name
+                                - email
+                                - department
+            security: []
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: sales_member
+                description: ''
+                example: et
+                required: true
+                schema:
+                    type: string
+    /api/sales-members/name/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    '/api/sales-members/{id}/company_groups':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: incidunt
+                required: true
+                schema:
+                    type: string
+    /api/classifications/name/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/allergies/name/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/browsing-logs:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                client_user_id:
+                                    type: integer
+                                    description: ''
+                                    example: 9
+                                product_id:
+                                    type: integer
+                                    description: ''
+                                    example: 16
+                            required:
+                                - client_user_id
+                                - product_id
+            security: []
+    /api/browsing-logs/all/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/browsing-logs/output/csv:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/login-logs/all/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/login-logs/output/csv:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/searching-logs/all/list:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/searching-logs/output/csv:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/zipaddress:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/ip-addresses:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    result: true
+                                properties:
+                                    result: { type: boolean, example: true }
+            tags:
+                - Endpoints
+            security: []
+    '/{any}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!DOCTYPE html>\n<html lang=\"ja\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"csrf-token\" content=\"fDyOYLOoMPM34TugrH2gjHZWVWMQW7xdj2k6ruRJ\">\n    <meta name=\"robots\" content=\"noindex,nofollow\">\n    <title>Laravel</title>\n    <link rel=\"stylesheet\" href=\"/css/app.css?id=5bf19eede7fc31ed6552\">\n    <link\n      href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css\"\n      rel=\"stylesheet\"\n    />\n    <link\n      href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap\"\n      rel=\"stylesheet\"\n    />\n    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css\" rel=\"stylesheet\">\n  </head>\n  <body>\n    <div id=\"app\"></div>\n  </body>\n  <script src=\"/js/app.js?id=a040cb69eb40d2d62b45\"></script>\n  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js\"></script>\n  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js\"></script>\n  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js\"></script>\n</html>"
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: any
+                description: 'Optional parameter.'
+                required: true
+                schema:
+                    type: string
+                examples:
+                    omitted:
+                        summary: 'When the value is omitted'
+                        value: ''
+                    present:
+                        summary: 'When the value is present'
+                        value: ut

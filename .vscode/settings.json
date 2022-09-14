@@ -1,0 +1,76 @@
+{
+  // PHP_CS_FIXER
+  "php-cs-fixer.onsave": true,
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.config": "/.php-cs-fixer.php",
+  "php-cs-fixer.formatHtml": true, // htmlも同時にフォーマットをかける
+  "[php]": {
+    "editor.defaultFormatter": "junstyle.php-cs-fixer" // PHPを使用する際のフォーマッターはPHP CS Fixerに設定される
+  },
+  // PRETTIER
+  "prettier.disableLanguages": [],
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "[yaml]": {
+      "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  // EDITOR_SETTING
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[vue]": {
+    "editor.tabSize": 2
+  },
+  // ESLINT
+  // "eslint.options": { "configFile": "./frontend/.eslintrc.js" },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll": true
+  },
+  "eslint.validate": ["javascript", "vue"],
+  // "editor.formatOnSave": true,
+  "extensions.ignoreRecommendations": false,
+  "cSpell.words": [
+    "REGIST"
+  ]
+}
+
+// {
+//     "php-cs-fixer.onsave": true,
+//     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+//     "php-cs-fixer.config": "/.php-cs-fixer.php",
+//     "php-cs-fixer.formatHtml": true, // htmlも同時にフォーマットをかける
+//     "[php]": {
+//         "editor.defaultFormatter": "junstyle.php-cs-fixer" // PHPを使用する際のフォーマッターはPHP CS Fixerに設定される
+//     },
+//     "[javascript]": {
+//         "editor.tabSize": 2
+//     },
+//     "[vue]": {
+//         "editor.tabSize": 2
+//     },
+//     "editor.codeActionsOnSave": {
+//         "source.fixAll.eslint": true,
+//         // "source.organizeImports": true,
+//         "source.fixAll": true
+//     },
+//     "eslint.validate": [
+//         "javascript",
+//         "vue"
+//     ],
+//     "extensions.ignoreRecommendations": false,
+//     "rest-client.environmentVariables": {
+//         "dev": {
+//             "host": "localhost:8080",
+//         },
+//         "stg": {
+//             "host": "stg.hoge.jp",
+//         },
+//         "prod": {
+//             "host": "prod.hoge.jp",
+//         }
+//     }
+// }

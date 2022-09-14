@@ -1,0 +1,99 @@
+dl {
+    border-bottom: 1px solid #b6c9db;
+    margin-bottom: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+dt {
+    text-align: right;
+    font-weight: normal;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0;
+}
+@media ( max-width:767px) {
+    dt {
+        text-align: left;
+    }
+}
+
+dd {
+    width: 70%;
+    text-align: left;
+    padding-left: 1rem;
+    margin-bottom: 0;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+input[type=radio]:hover, input[type=checkbox]:hover {
+    cursor: pointer;
+}
+
+.choice_img {
+    max-height: 100px;
+    display: block;
+}
+
+.conf_control {
+    display: none;
+}
+
+.err_msg {
+    color: crimson;
+    background-color: #f8d7da;
+    border: 1px solid crimson;
+    padding: 5px 12px;
+    border-radius: 3px;
+    margin-top: 3px;
+    display: none;
+    width: 100%;
+    font-size: 80%;
+}
+
+input, textarea, select {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+input[type=radio],input[type=checkbox]{
+    display: inline;
+    width: unset;
+    height: unset;
+    padding: unset;
+}
+
+input:focus, textarea:focus, select:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, .25);
+}
+
+.custom_contents{
+    height: 100px;
+}
+input[name="zip"],select[name="pref"]{
+    width: 200px;
+    display: inline;
+}
+input[name="last_name"],input[name="first_name"]{
+    display: inline;
+}
+.font80{
+    font-size: 80%;
+}

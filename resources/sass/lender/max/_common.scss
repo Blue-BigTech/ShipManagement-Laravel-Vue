@@ -1,0 +1,34 @@
+.header-lender {
+    padding: getMax(40) getMax(20) getMax(25) getMax(20);
+    .header-logo {
+        padding-right: getMax(14);
+        width: getMax(140);
+    }
+    .header-title {
+        font-size: getMax(30);
+    }
+    .header-login {
+        border-radius: getMax(23);
+        font-size: getMax(18);
+        line-height: getMax(46);
+        width: getMax(154);
+    }
+}
+.footer-lender {
+    padding-top: getMax(30);
+    .footer-logo {
+        padding-bottom: getMax(23);
+        width: getMax(237);
+    }
+    .footer-menus {
+        margin-bottom: getMax(30);
+        > li {
+            margin-bottom: getMax(16);
+            .footer-menu {
+                // font-size: getMax(24);
+                margin: 0 getMax(10) 0 0;
+                padding: 0 getMax(20) 0 0;
+            }
+        }
+    }
+}

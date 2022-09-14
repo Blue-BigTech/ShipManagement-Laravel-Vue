@@ -1,0 +1,11 @@
+@startuml YUGYOSEN
+
+!define MASTER_MARK_COLOR AAFFAA
+!define TRANSACTION_MARK_COLOR AFEEEE
+!define JOIN_TABLE_MARK_COLOR EBA4C7
+
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}

@@ -1,0 +1,40 @@
+<?php
+
+return [
+    "placeholder" => [
+        'name'                => "",
+        'furigana'            => "",
+        'zip'                 => "",
+        'address'             => "",
+        'tel'                 => "",
+        'email'               => "",
+        'conf_email'          => "",
+        'last_name'           => "",
+        'first_name'          => "",
+        'last_name_furigana'  => "",
+        'first_name_furigana' => "",
+        'fax'                 => "",
+        'company_name'        => "",
+        'staff_name'          => "",
+        'official_position'   => "",
+        'date'                => "",
+        'time'                => "",
+        'contents'            => "",
+    ],
+    "form"        => [
+        "form_title_root"            => "お問い合わせフォーム",
+        "form_title_orignal_contact" => "お問い合わせオリジナルフォーム",
+        "form_title_contact5"        => "お問い合わせフォーム5",
+        "thanks_front_dear"          => "",
+        "thanks_behind_dear"         => "様",
+        "thanks_msg_admin"           => "お問い合わせがありました。",
+        "thanks_msg"                 => "お問い合わせありがとうございました。",
+        "check"                      => "宛てに確認メールを送信しております。<br>ご確認ください。",
+        "hello"                      => "こんにちわ",
+        "reply_dear"                 => "さん",
+        "reply_thanks"               => "お問い合わせありがとうございます。",
+        "accepted"                   => "問い合わせ内容は以下で受け付けました",
+        "hidden"                     => "このフォームは、現在ご利用いただけません",
+        "denied_ip"                  => "接続ができませんでした",
+    ]
+];

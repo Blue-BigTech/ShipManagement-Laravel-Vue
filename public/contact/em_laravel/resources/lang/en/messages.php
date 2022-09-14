@@ -1,0 +1,40 @@
+<?php
+
+return [
+    "placeholder" => [
+        'name'                => "",
+        'furigana'            => "",
+        'zip'                 => "",
+        'address'             => "",
+        'tel'                 => "",
+        'email'               => "",
+        'conf_email'          => "",
+        'last_name'           => "",
+        'first_name'          => "",
+        'last_name_furigana'  => "",
+        'first_name_furigana' => "",
+        'fax'                 => "",
+        'company_name'        => "",
+        'staff_name'          => "",
+        'official_position'   => "",
+        'date'                => "",
+        'time'                => "",
+        'contents'            => "",
+    ],
+    "form"        => [
+        "form_title_root"            => "Contact form",
+        "form_title_orignal_contact" => "Contact orignal form",
+        "form_title_contact5"        => "Contact form 5",
+        "thanks_front_dear"          => "Dear",
+        "thanks_behind_dear"         => "",
+        "thanks_msg_admin"           => "There was an inquiry",
+        "thanks_msg"                 => "Thank you for your inquiry.",
+        "check"                      => "We are sending a confirmation email.<br>Please confirm.",
+        "hello"                      => "Hello",
+        "reply_dear"                 => "Dear",
+        "reply_thanks"               => "Thank you for your inquiry.",
+        "accepted"                   => "Inquiries accepted below",
+        "hidden"                     => "Currently unavailable",
+        "denied_ip"                  => "Could not connect",
+    ]
+];

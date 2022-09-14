@@ -1,0 +1,309 @@
+@import "../_variables";
+
+#Wrapper {
+    .ex-recommend {
+        .ex-recommend-headline {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: getVW(30);
+            font-weight: 700;
+            height: getVW(50);
+            justify-content: center;
+            margin-bottom: getVW(40);
+            margin-top: getVW(22);
+
+            > span {
+                padding-right: getVW(76);
+            }
+
+            &::before {
+                background: url(/images/boatList/icon_boat.svg) center no-repeat;
+                background-size: contain;
+                content: "";
+                height: getVW(34);
+                margin: 0 getVW(10);
+                width: getVW(56);
+            }
+
+            &::after {
+                background: url(/images/boatList/line_wave.svg) center bottom no-repeat;
+                background-size: contain;
+                content: "";
+                height: getVW(8);
+                padding-top: getVW(20);
+                width: getVW(750);
+            }
+        }
+
+        .ex-recommend-item {
+            background: #dff2fc;
+            border-radius: 12px;
+            display: block;
+            margin-bottom: getVW(30);
+            padding: getVW(22) getVW(26);
+
+            .ex-recommend-item-summary {
+                display: flex;
+
+                > dl {
+                    margin-bottom: getVW(20);
+                }
+
+                .ex-recommend-item-summary-icon {
+                    height: getVW(105);
+                    margin-right: getVW(20);
+                    width: getVW(105);
+                }
+
+                .ex-recommend-item-summary-name {
+                    color: #000000;
+                    font-size: getVW(30);
+                    font-weight: 700;
+                    margin-bottom: getVW(0);
+                }
+
+                .ex-recommend-item-summary-port {
+                    color: #000000;
+                    font-size: getVW(22);
+                    font-weight: 700;
+                    margin-bottom: getVW(0);
+                }
+
+                .ex-recommend-item-summary-review {
+                    color: #0074b6;
+                    font-size: getVW(22);
+                    font-weight: 700;
+                    margin-bottom: getVW(0);
+                }
+            }
+
+            .ex-recommend-item-information {
+                display: flex;
+                margin-bottom: getVW(20);
+
+                &.ex-line {
+                    border-bottom: 1px solid #979698;
+                    margin-bottom: getVW(20);
+                    padding-bottom: getVW(20);
+                }
+
+                .ex-recommend-item-information-image {
+                    margin-right: getVW(20);
+                    width: getVW(246);
+                }
+
+                .ex-recommend-item-information-items {
+                    .ex-recommend-item-information-item {
+                        margin-bottom: getVW(0);
+
+                        > dt {
+                            color: #0074b6;
+                            font-size: getVW(24);
+                            margin-bottom: getVW(0);
+                            padding: 0;
+                        }
+
+                        > dd {
+                            color: #000000;
+                            font-size: getVW(24);
+                            margin-bottom: getVW(0);
+                            padding: 0;
+                        }
+                    }
+                }
+
+                .ex-recommend-item-information-pr {
+                    color: #000000;
+                    margin: 0 getVW(38) 0 0;
+
+                    .ex-recommend-item-information-pr-headline {
+                        display: flex;
+                        font-size: getVW(24);
+                        font-weight: 700;
+                        margin-bottom: getVW(22);
+
+                        &::before {
+                            background: url(/images/boatList/icon_comment.svg) center no-repeat;
+                            background-size: contain;
+                            content: "";
+                            display: block;
+                            height: getVW(30);
+                            width: getVW(30);
+                        }
+                    }
+
+                    .ex-recommend-item-information-pr-comment {
+                        font-size: getVW(24);
+                        margin-bottom: getVW(22);
+                    }
+
+                    .ex-recommend-item-information-pr-tell {
+                        display: flex;
+                        font-size: getVW(24);
+                        font-weight: 700;
+
+                        &::before {
+                            background: url(/images/boatList/icon_tell.svg) center no-repeat;
+                            background-size: contain;
+                            content: "";
+                            display: block;
+                            height: getVW(30);
+                            width: getVW(18);
+                        }
+                    }
+                }
+
+                .ex-recommend-item-information-call {
+                    min-width: getVW(182);
+
+                    a {
+                        display: block;
+                    }
+                }
+            }
+
+            .ex-recommend-item-detail {
+                background: #4e4d4d;
+                border-radius: 12px;
+                color: #ffffff;
+                display: block;
+                font-size: getVW(24);
+                line-height: getVW(74);
+                text-align: center;
+                width: getVW(694);
+            }
+        }
+    }
+
+    .ex-search {
+        margin-bottom: getVW(38);
+
+        &.ex-bottom {
+            margin-bottom: 0;
+        }
+
+        .ex-search-headline {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: getVW(30);
+            font-weight: 700;
+            min-height: getVW(50);
+            justify-content: center;
+            margin-bottom: getVW(40);
+            margin-top: getVW(22);
+
+            > span {
+                padding-right: getVW(76);
+            }
+
+            &::before {
+                background: url(/images/boatList/icon_boat.svg) center no-repeat;
+                background-size: contain;
+                content: "";
+                height: getVW(34);
+                margin: 0 getVW(10);
+                width: getVW(56);
+            }
+
+            &::after {
+                background: url(/images/boatList/line_wave.svg) center bottom no-repeat;
+                background-size: contain;
+                content: "";
+                height: getVW(8);
+                padding-top: getVW(20);
+                width: getVW(750);
+            }
+        }
+
+        .ex-search-dropdown {
+            align-items: center;
+            background: #00afec;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            font-size: getVW(30);
+            font-weight: 700;
+            height: getVW(92);
+            width: getVW(750);
+
+            &::before {
+                content: "";
+                width: getVW(62);
+            }
+
+            &::after {
+                content: "▼";
+                padding: 0 getVW(16);
+            }
+        }
+
+        .ex-search-choice {
+            background: #ffffff;
+            border-bottom: 1px solid #00afec;
+            position: absolute;
+            width: getVW(750);
+            z-index: 1;
+
+            .ex-search-choice-items {
+                flex-direction: row;
+                width: getVW(750);
+
+                .ex-search-choice-item {
+                    border-bottom: 1px solid #00afec;
+                    font-size: getVW(30);
+                    margin-bottom: -1px;
+                    text-align: center;
+
+                    &:nth-child(2n+1) {
+                        border-right: 1px solid #00afec;
+                    }
+
+                    > a {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .ex-wanted {
+        background: url(/images/common/bg_wanted.png) center no-repeat;
+        background-size: contain;
+        color: #ffffff;
+        display: block;
+        font-weight: 700;
+        height: getVW(443);
+        line-height: 1;
+        margin: 0 auto;
+        text-align: center;
+        width: getVW(682);
+
+        .ex-wanted-title {
+            color: #ffffff;
+            font-size: getVW(40);
+            padding: getVW(42) 0 getVW(90) 0;
+        }
+
+        .ex-wanted-current {
+            color: #000000;
+            font-size: getVW(30);
+            padding: 0 0 getVW(10) 0;
+        }
+
+        .ex-wanted-count {
+            .ex-wanted-count-number {
+                color: #ffffff;
+                font-size: getVW(100);
+            }
+
+            .ex-wanted-count-unit {
+                color: #ffffff;
+                font-size: getVW(30);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 750px) {
+	@import "max/_extra";
+}

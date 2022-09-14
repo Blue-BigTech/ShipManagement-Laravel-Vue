@@ -1,0 +1,6 @@
+version: "3" # docker-compose.yamlのバージョンと合わせる
+
+services:
+  app: # host.docker.internalを使用したいサービス名
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

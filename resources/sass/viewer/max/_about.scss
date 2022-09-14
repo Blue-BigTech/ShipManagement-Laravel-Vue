@@ -1,0 +1,65 @@
+@import "../_variables";
+#Wrapper.about {
+    main {
+        .main-logo {
+            height: getMax(426);
+            margin: getMax(80) auto getMax(57) auto;
+            width: getMax(426);
+        }
+        .main-headline {
+            font-size: getMax(35);
+        }
+        .main-greeting {
+            font-size: getMax(26);
+            margin: 0 getMax(38) getMax(64) getMax(38);
+        }
+        .main-summary {
+            margin: 0 getMax(38) getMax(120) getMax(38);
+            .main-summary-headline {
+                font-size: getMax(26);
+                margin-bottom: getMax(64);
+            }
+            .main-summary-explain {
+                font-size: getMax(26);
+            }
+        }
+        .main-purpose {
+            .main-purpose-headline {
+                font-size: getMax(36);
+                margin-bottom: getMax(36);
+            }
+            .main-purpose-explain {
+                 margin-bottom: getMax(100);
+                .main-purpose-explain-headline {
+                    font-size: getMax(26);
+                    margin-bottom: getMax(6);
+                }
+                .main-purpose-explain-suply {
+                    font-size: getMax(0);
+                }
+            }
+        }
+        .main-wanted {
+            margin-bottom: getMax(87);
+            padding: getMax(82)  getMax(38) getMax(66) getMax(38);
+            .main-wanted-headline {
+                font-size: getMax(36);
+                margin-bottom: getMax(36);
+            }
+            .main-wanted-explain {
+                font-size: getMax(26);
+                margin-bottom: getMax(50);
+            }
+        }
+        .main-reason {
+            margin: 0 getMax(38) getMax(186) getMax(38);
+            .main-reason-headline {
+                font-size: getMax(36);
+                margin-bottom: getMax(50);
+            }
+            .main-summary-explain {
+                font-size: getMax(26);
+            }
+        }
+    }
+}

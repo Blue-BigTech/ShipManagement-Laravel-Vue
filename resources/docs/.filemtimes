@@ -1,0 +1,27 @@
+# GENERATED. YOU SHOULDN'T MODIFY OR DELETE THIS FILE.
+# Scribe uses this file to know when you change something manually in your docs.
+resources/docs/groups/endpoints.md=1621572974
+resources/docs/index.md=1621572974
+resources/docs/authentication.md=1621572975
+resources/docs/groups/auth.md=1621572974
+resources/docs/groups/.md=1621500826
+resources/docs/groups/allergy.md=1621572974
+resources/docs/groups/browsinglog.md=1621572974
+resources/docs/groups/classification.md=1621572974
+resources/docs/groups/clientuser.md=1621572974
+resources/docs/groups/company.md=1621572974
+resources/docs/groups/companygroup.md=1621572974
+resources/docs/groups/contact.md=1621572974
+resources/docs/groups/dangerousgrade.md=1621572974
+resources/docs/groups/flavor.md=1621572974
+resources/docs/groups/loginlog.md=1621572974
+resources/docs/groups/order.md=1621572974
+resources/docs/groups/ordercart.md=1621572974
+resources/docs/groups/orderunit.md=1621572974
+resources/docs/groups/product.md=1621572974
+resources/docs/groups/salesmember.md=1621572974
+resources/docs/groups/searchinglog.md=1621572974
+resources/docs/groups/shippingaddress.md=1621572974
+resources/docs/groups/solubility.md=1621572974
+resources/docs/groups/usecase.md=1621572974
+resources/docs/groups/util.md=1621572974

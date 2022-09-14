@@ -1,0 +1,430 @@
+@import "../_variables";
+
+#Wrapper {
+    .ex-menu {
+        margin-bottom: getVW(64);
+        padding: getVW(20);
+
+        .ex-menu-items {
+            border-top: 1px solid #979698;
+            margin: 0;
+            padding: 0;
+
+            .ex-menu-item {
+                border-bottom: 1px solid #979698;
+                list-style: none;
+
+                &__link {
+                    align-items: center;
+                    color: #4e4d4d;
+                    display: flex;
+                    font-size: getVW(30);
+                    font-weight: 700;
+                    height: getVW(125);
+                    justify-content: space-between;
+
+                    > span {
+                        margin-left: getVW(18);
+                        width: 100%;
+                    }
+
+                    &::before {
+                        background: center no-repeat;
+                        background-size: contain;
+                        content: "";
+                        height: getVW(54);
+                        min-width: getVW(54);
+                        width: getVW(54);
+                    }
+
+                    &:after {
+                        background: url(/images/lender/icon_menu_arrow.svg) center no-repeat;
+                        background-size: contain;
+                        content: "";
+                        height: getVW(54);
+                        min-width: getVW(54);
+                        width: getVW(54);
+                    }
+
+                    &.ex-edit {
+                        &::before {
+                            background-image: url(/images/lender/icon_menu_edit.svg);
+                        }
+                    }
+
+                    &.ex-ranking {
+                        &::before {
+                            background-image: url(/images/lender/icon_menu_ranking.svg);
+                        }
+                    }
+
+                    &.ex-line {
+                        &::before {
+                            background-image: url(/images/lender/icon_menu_line.svg);
+                        }
+                    }
+
+                    &.ex-contact {
+                        &::before {
+                            background-image: url(/images/lender/icon_menu_contact.svg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ex-check {
+        align-items: center;
+        display: flex;
+        font-size: $font-form;
+        font-weight: 400 !important;
+
+        > span {
+            margin-right: v(10);
+            min-height: 20px;
+            width: 20px;
+        }
+    }
+
+    .ex-input {
+        font-size: $font-form;
+        // font-size: $font-md;
+        width: 100%;
+
+        &::placeholder {
+            font-size: $font-form;
+            // font-size: $font-md;
+        }
+
+        &:focus-visible {
+            border-radius: 3px;
+            outline: 2px solid #3c8bc9;
+        }
+
+        &.ex-unit {
+            margin-right: getVW(10);
+            width: 50%;
+        }
+    }
+
+    textarea {
+        &.ex-input {
+            min-height: getVW(176) !important;
+        }
+    }
+
+    .ex-file {
+        display: flex;
+        justify-content: center;
+
+        > div {
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+
+        .ex-preview {
+            margin-right: getVW(20);
+
+            .ex-preview-inner {
+                display: flex;
+                max-height: getVW(240);
+                max-width: getVW(240);
+                position: relative;
+
+                img {
+                    max-height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            .ex-preview-close {
+                background: transparent;
+                border: 2px solid #666767;
+                border-radius: 50%;
+                color: transparent;
+                display: block;
+                height: getVW(40);
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: getVW(40);
+
+                &::before ,
+                &::after {
+                    background: #666767;
+                    content: "";
+                    height: getVW(26);
+                    left: 50%;
+                    position: absolute;
+                    top: 50%;
+                    width: getVW(4);
+                }
+
+                &::before {
+                    transform: translate(-50%,-50%) rotate(45deg);
+                }
+
+                &::after {
+                    transform: translate(-50%,-50%) rotate(-45deg);
+                }
+            }
+
+            .ex-preview-name {
+                // font-size: getVW(24);
+                font-size: $font-md;
+                max-width: getVW(240);
+                overflow: hidden;
+                text-align: center;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        .ex-file-inner {
+            align-items: center;
+            background: #f1f1f1;
+            border-radius: 50rem;
+            display: flex;
+            height: getVW(89);
+            justify-content: center;
+            position: relative;
+            width: getVW(391);
+
+            &::before {
+                background: url(/images/lender/icon_image.svg) center no-repeat;
+                background-size: contain;
+                content: "";
+                display: block;
+                height: getVW(38);
+                margin-right: getVW(20);
+                width: getVW(49);
+            }
+
+            input {
+                bottom: 0;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+
+    input {
+        &[type=text] ,
+        &[type=password] ,
+        &[type=number] {
+            &.ex-input {
+                appearance: none;
+                background: #f1f1f1;
+                border: none;
+                line-height: getVW(87);
+                padding: 0 getVW(28);
+            }
+        }
+
+        &[type=number] {
+            &.ex-input {
+                appearance: textfield;
+
+                &::-webkit-outer-spin-button
+                &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    textarea {
+        &.ex-input {
+            appearance: none;
+            background: #f1f1f1;
+            border: none;
+            padding: getVW(18) getVW(28);
+        }
+    }
+
+    .ex-select {
+        display: inline-block;
+        position: relative;
+
+        &::before {
+            border: getVW(12) solid transparent;
+            border-top: getVW(12) solid #979698;
+            content: "";
+            position: absolute;
+            right: getVW(20);
+            top: 50%;
+            transform: translate(0, getVW(5));
+            z-index: 1;
+        }
+
+        &::after {
+            border: getVW(12) solid transparent;
+            border-bottom: getVW(12) solid #979698;
+            content: "";
+            position: absolute;
+            right: getVW(20);
+            top: 50%;
+            transform: translate(0, calc(-100% - getVW(5)));
+            z-index: 1;
+        }
+
+        select {
+            appearance: none;
+            background: #f1f1f1;
+            border: none;
+            font-size: $font-form;
+            // font-size: $font-md;
+            height: getVW(87);
+            padding: getVW(10) getVW(90) getVW(10) getVW(10);
+            text-align: center;
+            width: auto;
+        }
+    }
+
+    .ex-tree-select {
+        .vue-treeselect__single-value {
+            font-size: $font-form;
+            // font-size: $font-md;
+            line-height: getVW(87);
+            padding: getVW(0) getVW(90) getVW(0) getVW(20);
+        }
+
+        .vue-treeselect__placeholder {
+            font-size: $font-form;
+        }
+
+        .vue-treeselect__control {
+            background: #f1f1f1;
+            border: none;
+            display: inline-block;
+            height: getVW(87);
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+
+            &::before {
+                border: getVW(12) solid transparent;
+                border-top: getVW(12) solid #979698;
+                content: "";
+                position: absolute;
+                right: getVW(20);
+                top: 50%;
+                transform: translate(0, getVW(5));
+                z-index: 1;
+            }
+
+            &::after {
+                border: getVW(12) solid transparent;
+                border-bottom: getVW(12) solid #979698;
+                content: "";
+                position: absolute;
+                right: getVW(20);
+                top: 50%;
+                transform: translate(0, calc(-100% - #{getVW(5)}));
+                z-index: 1;
+            }
+
+            .vue-treeselect__control-arrow-container {
+                display: none;
+            }
+
+            .vue-treeselect__input-container {
+                padding: 0;
+                font-size: $font-form;
+
+                input {
+                    appearance: none;
+                    background: #f1f1f1;
+                    border: none;
+                    box-sizing: border-box;
+                    font-size: $font-form;
+                    height: getVW(87);
+                    padding: getVW(10) getVW(90) getVW(10) getVW(20);
+                    width: auto;
+                }
+            }
+        }
+
+        .vue-treeselect__menu-container {
+            font-size: $font-form;
+
+            label {
+                line-height: 3 !important;
+            }
+        }
+    }
+
+    button {
+        &.ex-button {
+            border: none;
+            border-radius: 0;
+            color: #ffffff;
+            display: block;
+            // font-size: getVW(24);
+            font-size: $font-md;
+            font-weight: 400;
+            line-height: getVW(74);
+            margin: getVW(42) auto getVW(120) auto;
+            padding: 0 !important;
+            text-align: center;
+            width: getVW(431);
+
+            &.ex-confirm {
+                background: #313333 !important;
+            }
+
+            &.ex-submit {
+                background: #0074b6 !important;
+            }
+        }
+    }
+
+    .ex-collapses {
+        dl {
+            > dt {
+                line-height: 1;
+                position: relative;
+
+                &.ex-collapse {
+                    border-bottom: 1px solid #cbcbcb;
+                    border-top: 1px solid #cbcbcb;
+                    line-height: getVW(89);
+                    margin-bottom: -1px;
+
+                    &::before {
+                        border: getVW(12) solid transparent;
+                        border-top: getVW(12) solid #979698;
+                        content: "";
+                        position: absolute;
+                        right: getVW(20);
+                        top: 50%;
+                        transform: translate(0, -25%) rotate(0deg);
+                        transform-origin: 50% 25%;
+                        transition-duration: 0.2s;
+                        z-index: 1;
+                    }
+
+                    &.collapsed {
+                        &::before {
+                            transform: translate(0, -25%) rotate(-90deg);
+                        }
+                    }
+
+                    + dd {
+                        padding-top: getVW(14);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 750px) {
+    @import "max/_extra";
+}

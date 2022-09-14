@@ -1,0 +1,61 @@
+version: '3.8'
+
+volumes:
+  docker-volume:
+  vendor-store:
+  node_modules-store:
+
+services:
+  web:
+    image: nginx:1.18
+    ports:
+      - '8180:80'
+    depends_on:
+      - app
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - .:/var/www/yugyosen:cached
+    stdin_open: true
+    tty: true
+    networks:
+      - yugyosen-dev
+  app:
+    build: ./docker/php
+    volumes:
+      - .:/var/www/yugyosen:cached
+      - vendor-store:/var/www/yugyosen/vendor
+      - node_modules-store:/var/www/yugyosen/node_modules
+    stdin_open: true
+    tty: true
+    networks:
+      - yugyosen-dev
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - '3369:3306'
+    environment:
+      MYSQL_DATABASE: yugyosen
+      MYSQL_USER: yugyosen
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - docker-volume:/var/lib/mysql
+    networks:
+      - yugyosen-dev
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_yugyosen
+    links:
+      - db:db
+    ports:
+      - 8181:80
+    volumes:
+      - ./docker/phpMyAdmin/phpmyadmin-misc.ini:/usr/local/etc/php/conf.d/phpmyadmin-misc.ini
+    networks:
+      - yugyosen-dev
+
+networks:
+  yugyosen-dev:
+    external: true

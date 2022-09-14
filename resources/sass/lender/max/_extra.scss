@@ -1,0 +1,171 @@
+@import "../_variables";
+#Wrapper {
+    .ex-menu {
+        margin-bottom: getMax(64);
+        padding: getMax(20);
+        .ex-menu-items {
+            .ex-menu-item {
+                &__link {
+                    font-size: getMax(30);
+                    height: getMax(125);
+                    > span {
+                        margin-left: getMax(18);
+                    }
+                    &::before {
+                        height: getMax(54);
+                        min-width: getMax(54);
+                        width: getMax(54);
+                    }
+                    &:after {
+                        height: getMax(54);
+                        min-width: getMax(54);
+                        width: getMax(54);
+                    }
+                }
+            }
+        }
+    }
+    .ex-check {
+        > span {
+            margin-right: getMax(10);
+        }
+    }
+    .ex-input {
+        &.ex-unit {
+            margin-right: getMax(10);
+        }
+    }
+    textarea {
+        &.ex-input {
+            min-height: getMax(176) !important;
+        }
+    }
+    .ex-file {
+        .ex-preview {
+            margin-right: getMax(20);
+            .ex-preview-inner {
+                max-height: getMax(240);
+                max-width: getMax(240);
+            }
+            .ex-preview-close {
+                height: getMax(40);
+                width: getMax(40);
+                &::before ,
+                &::after {
+                    height: getMax(26);
+                    width: getMax(4);
+                }
+                &::before {
+                    transform: translate(-50%,-50%) rotate(45deg);
+                }
+                &::after {
+                    transform: translate(-50%,-50%) rotate(-45deg);
+                }
+            }
+            .ex-preview-name {
+                // font-size: getMax(24);
+                max-width: getMax(240);
+            }
+        }
+        .ex-file-inner {
+            height: getMax(89);
+            width: getMax(391);
+            &::before {
+                height: getMax(38);
+                margin-right: getMax(20);
+                width: getMax(49);
+            }
+        }
+    }
+    input {
+        &[type=text] ,
+        &[type=password] ,
+        &[type=number] {
+            &.ex-input {
+                line-height: getMax(87);
+                padding: 0 getMax(28);
+            }
+        }
+    }
+    textarea {
+        &.ex-input {
+            padding: getMax(18) getMax(28);
+        }
+    }
+    .ex-select {
+        &::before {
+            border: getMax(12) solid transparent;
+            border-top: getMax(12) solid #979698;
+            right: getMax(20);
+            transform: translate(0, getMax(5));
+        }
+        &::after {
+            border: getMax(12) solid transparent;
+            border-bottom: getMax(12) solid #979698;
+            right: getMax(20);
+            transform: translate(0, calc(-100% - getMax(5)));
+        }
+        select {
+            height: getMax(87);
+            padding: getMax(10) getMax(90) getMax(10) getMax(10);
+        }
+    }
+    .ex-tree-select {
+        .vue-treeselect__single-value {
+            line-height: getMax(87);
+            padding: getMax(0) getMax(90) getMax(0) getMax(20);
+        }
+        .vue-treeselect__control {
+            height: getMax(87);
+            &::before {
+                border: getMax(12) solid transparent;
+                border-top: getMax(12) solid #979698;
+                right: getMax(20);
+                transform: translate(0, getMax(5));
+            }
+            &::after {
+                border: getMax(12) solid transparent;
+                border-bottom: getMax(12) solid #979698;
+                right: getMax(20);
+                transform: translate(0, calc(-100% - #{getVW(5)}));
+            }
+            .vue-treeselect__input-container {
+                input {
+                    height: getMax(87);
+                    padding: getMax(10) getMax(90) getMax(10) getMax(20);
+                }
+            }
+        }
+    }
+    button {
+        &.ex-button {
+            // font-size: getMax(24);
+            line-height: getMax(74);
+            margin: getMax(42) auto getMax(120) auto;
+            width: getMax(431);
+        }
+    }
+    .ex-collapses {
+        dl {
+            > dt {
+                &.ex-collapse {
+                    line-height: getMax(89);
+                    &::before {
+                        border: getMax(12) solid transparent;
+                        border-top: getMax(12) solid #979698;
+                        right: getMax(20);
+                        transform: translate(0, -25%) rotate(0deg);
+                    }
+                    &.collapsed {
+                        &::before {
+                            transform: translate(0, -25%) rotate(-90deg);
+                        }
+                    }
+                    + dd {
+                        padding-top: getMax(14);
+                    }
+                }
+            }
+        }
+    }
+}

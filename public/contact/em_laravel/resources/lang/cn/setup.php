@@ -1,0 +1,37 @@
+<?php
+return [
+    /*
+     * setup
+     */
+    'install_url'                         => '安装位置 URL',
+    'db_setting_info'                     => 'DB设置',
+    'db_connection_comp_msg'              => '已连接DB',
+    'db_connection_error_msg'             => '无法连接DB。请确认设置',
+    'db_host'                             => '主机地址',
+    'db_port'                             => '端口',
+    'db_name'                             => '数据库名称',
+    'db_username'                         => '用户名',
+    'db_password'                         => '密码',
+    'dash_board_login_info'               => '管理界面信息注册',
+    'dash_board_login_email'              => '登录电子邮件地址',
+    'dash_board_login_password'           => '登录密码',
+    'setting_form_submit'                 => '设置',
+    'db_host_error_msg'                   => '请输入主机地址',
+    'db_port_error_msg'                   => '请输入端口',
+    'db_name_error_msg'                   => '请输入数据库名称',
+    'db_username_error_msg'               => '请输入用户名',
+    'db_password_error_msg'               => '请输入密码',
+    'dash_board_login_email_error_msg'    => '请输入登录电子邮件地址',
+    'dash_board_login_password_error_msg' => '请输入登录电子邮件地址',
+    'dash_board_login_comp_msg'           => '注册完成',
+    'dash_board_login_comp_url_msg'       => '可通过以下界面登录',
+    'setup_complete'                      => '注册完成',
+    'login'                               => '登录',
+    'db_url_error_msg'                    => '请输入URL',
+    'db_url_format_error_msg'             => '请按照URL格式输入',
+    'language'                            => '语言',
+    'language_select'                     => '管理界面语言选择',
+    'language_select_error_msg'           => '请选择语言',
+    'timezone_select'                     => '时区选择',
+    'timezone'                            => '时区',
+];

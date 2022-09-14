@@ -1,0 +1,249 @@
+@import "../_variables";
+#Wrapper.top {
+    .header-top {
+        padding: getMax(96) getMax(38) getMax(28) getMax(38);
+        height: getMax(154);
+        margin-bottom: getMax(-154);
+        .header-menu {
+            margin-left: getMax(18);
+            width: getMax(70);
+        }
+        .header-login {
+            font-size: getMax(18);
+            line-height: getMax(46);
+            width: getMax(154);
+        }
+    }
+    .mainvisual {
+        &::before {
+            height: getMax(154);
+            margin-bottom: getMax(50);
+        }
+        &::after {
+            height: getMax(372);
+            margin-top: getMax(50);
+        }
+        .mainvisual-logo {
+            padding: 0 getMax(70) getMax(64) getMax(70);
+        }
+        .mainvisual-button {
+            font-size: getMax(46);
+            height: getMax(126);
+            width: getMax(515);
+        }
+    }
+    .bnavi {
+        height: getMax(372);
+        margin-top: getMax(-372);
+        .bnavi-menus {
+            height: getMax(274);
+            .bnavi-menu {
+                > a {
+                    font-size: getMax(22);
+                    > img {
+                        width: getMax(85);
+                    }
+                }
+            }
+        }
+        .bnavi-line {
+            font-size: getMax(32);
+            height: getMax(98);
+            .bnavi-line-icon {
+                height: getMax(53);
+                margin-right: getMax(31);
+                width: getMax(55);
+            }
+        }
+    }
+    .main {
+        .main-area {
+            margin-bottom: getMax(65);
+            .main-area-headline {
+                font-size: getMax(36);
+                margin-bottom: getMax(52);
+                &::before {
+                    height: getMax(33);
+                    margin-bottom: getMax(42);
+                    width: getMax(112);
+                }
+            }
+            .main-area-items {
+                padding: 0 getMax(18) getMax(17) getMax(18);
+                .main-area-item {
+                    font-size: getMax(24);
+                    padding: 0 getMax(18);
+                    .main-area-item-photo {
+                        margin-bottom: getMax(15);
+                    }
+                    .main-area-item-name {
+                        margin-bottom: getMax(30);
+                    }
+                }
+                li.main-area-item {
+                    line-height: getMax(40);
+                    margin-bottom: getMax(40);
+                }
+            }
+        }
+        .main-result {
+            .main-result-headline {
+                font-size: getMax(36);
+                margin-bottom: getMax(52);
+                &::before {
+                    height: getMax(44);
+                    margin-bottom: getMax(44);
+                    width: getMax(47);
+                }
+            }
+            .main-result-items {
+                padding: 0 getMax(23) 0 getMax(23);
+                margin-bottom: getMax(43);
+                .main-result-item {
+                    padding: 0 getMax(20) getMax(54) getMax(20);
+                    .main-result-item-additional {
+                        font-size: getMax(16);
+                        padding: getMax(15);
+                        text-shadow:2px 2px 0 #ffffff, -2px -2px 0 #ffffff,
+                        -2px 2px 0 #ffffff, 2px -2px 0 #ffffff,
+                        0px 2px 0 #ffffff,  0 -2px 0 #ffffff,
+                        -2px 0 0 #ffffff, 2px 0 0 #ffffff;
+                    }
+                    .main-result-item-summary {
+                        bottom: getMax(54);
+                        left: getMax(20);
+                        right: getMax(20);
+                        .main-result-item-fish {
+                            font-size: getMax(26);
+                        }
+                        .main-result-item-boat {
+                            font-size: getMax(20);
+                        }
+                    }
+                    &:nth-child(3n+1) {
+                        .main-result-item-summary {
+                            background: rgba(#0074b6, 0.8);
+                        }
+                    }
+                    &:nth-child(3n+2) {
+                        .main-result-item-summary {
+                            background: rgba(#8dc556, 0.8);
+                        }
+                    }
+                    &:nth-child(3n+3) {
+                        .main-result-item-summary {
+                            background: rgba(#03b3d9, 0.8);
+                        }
+                    }
+                }
+            }
+        }
+        .main-line {
+            padding: getMax(42) getMax(38) getMax(60) getMax(38);
+            .main-line-headline {
+                font-size: getMax(36);
+                margin-bottom: getMax(52);
+                &::before {
+                    height: getMax(58);
+                    margin-bottom: getMax(44);
+                    width: getMax(60);
+                }
+            }
+            .main-line-subheadline {
+                font-size: getMax(36);
+                padding: getMax(36) getMax(100);
+                margin-bottom: getMax(60);
+            }
+            .main-line-slide {
+                padding: getMax(110) getMax(20) 0 getMax(20);
+                .main-line-slide-item {
+                    .main-line-slide-item-explain {
+                        font-size: getMax(26);
+                    }
+                    .main-line-slide-item-copy {
+                        font-size: getMax(32);
+                        margin-bottom: getMax(158);
+                    }
+                    .main-line-slide-item-image {
+                        height: getMax(692);
+                        width: getMax(488);
+                    }
+                }
+                .main-line-slide-arrow {
+                    bottom: getMax(720);
+                    height: getMax(94);
+                    width: getMax(60);
+                }
+                .main-line-slide-indicators {
+                    bottom: getMax(720);
+                    .main-line-slide-indicator {
+                        height: getMax(20);
+                        width: getMax(20);
+                    }
+                }
+            }
+        }
+        .main-wanted {
+            height: getMax(443);
+            margin: getMax(60) auto;
+            width: getMax(682);
+            .main-wanted-title {
+                font-size: getMax(40);
+                padding: getMax(42) 0 getMax(90) 0;
+            }
+            .main-wanted-current {
+                font-size: getMax(30);
+                padding: 0 0 getMax(10) 0;
+            }
+            .main-wanted-count {
+                .main-wanted-count-number {
+                    font-size: getMax(100);
+                }
+            }
+        }
+        .main-startup {
+            padding: getMax(56) getMax(23) getMax(60) getMax(23);
+            .main-startup-headline {
+                font-size: getMax(36);
+                margin-bottom: getMax(52);
+                &::before {
+                    height: getMax(88);
+                    margin-bottom: getMax(44);
+                    width: getMax(85);
+                }
+            }
+            .main-startup-items {
+                .main-startup-item {
+                    margin-bottom: getMax(50);
+                    padding: getMax(15);
+                    .main-startup-item-times {
+                        font-size: getMax(24);
+                        margin-bottom: getMax(20);
+                    }
+                    .main-startup-item-title {
+                        font-size: getMax(26);
+                    }
+                }
+            }
+            .main-startup-more {
+                line-height: getMax(64);
+                width: getMax(680);
+            }
+        }
+        .main-news {
+            margin-bottom: getMax(372);
+            padding: 0px getMax(38);
+            .main-news-headline {
+                font-size: getMax(36);
+                padding: getMax(60) 0 getMax(40) 0;
+                margin-bottom: getMax(50);
+            }
+            .main-news-item-date {
+                font-size: getMax(24);
+            }
+            .main-news-item-title {
+                font-size: getMax(24);
+            }
+        }
+    }
+}

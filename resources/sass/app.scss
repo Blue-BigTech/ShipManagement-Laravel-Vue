@@ -1,0 +1,107 @@
+@import "_variables";
+@import "reset";
+
+/*-------------------------------------------*/
+/*  共通
+/*-------------------------------------------*/
+html, body {
+    height: 100%;
+}
+
+body  {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+// .main {
+//     min-height: 100vh;
+//     flex: 1;
+// }
+
+.table-striped-green > tbody > tr:nth-of-type(odd) {
+    background: $MainLight !important;
+}
+
+li.page-item.pagination-page-nav.active > .page-link {
+    background: $Main !important;
+    color: #fff !important;
+}
+
+/*-------------------------------------------*/
+/*  文字サイズ
+/*-------------------------------------------*/
+.font-xxs {
+    font-size: $font-xxs;
+}
+.font-xs {
+    font-size: $font-xs;
+}
+.font-sm {
+    font-size: $font-sm; // 0.875rem
+}
+.font-md {
+    font-size: $font-md; // 1rem
+}
+.font-lg {
+    font-size: $font-lg;
+}
+.font-xl {
+    font-size: $font-xl;
+}
+.font-xxl {
+    font-size: $font-xxl;
+}
+
+/*-------------------------------------------*/
+/*  その他共通
+/*-------------------------------------------*/
+.pointer {
+    cursor: pointer;
+}
+
+.sort-header {
+    cursor: pointer;
+}
+
+.error-message {
+    color: $Warning;
+    font-size: 12px;
+}
+
+.form-control {
+    height: 36px;
+    &:disabled[readonly] {
+        background-color: #f9f9f9 !important;
+        opacity: 1;
+    }
+    &::placeholder {
+        color: $Gray!important;
+    }
+}
+
+/*-------------------------------------------*/
+/*  管理画面
+/*-------------------------------------------*/
+.header-area--title{
+    font-size: 20px;
+}
+
+.table-wrapper {
+    position: relative;
+    height: 100vh;
+    overflow-x: scroll;
+    table{
+        position: absolute;
+        tr,td {
+            white-space: nowrap;
+        }
+    }
+}
+/*-------------------------------------------*/
+/*  form
+/*-------------------------------------------*/
+.form-label{
+    font-size: $font-md;
+    font-weight: bold;
+}

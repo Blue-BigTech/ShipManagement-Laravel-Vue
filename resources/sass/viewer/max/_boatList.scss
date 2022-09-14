@@ -1,0 +1,133 @@
+@import "../_variables";
+#Wrapper.list {
+    .main {
+        .main-boat {
+            .main-boat-free {
+                margin-bottom: getMax(30);
+                padding: getMax(22) getMax(26);
+                .main-boat-free-summary {
+                    > dl {
+                        margin-bottom: getMax(20);
+                    }
+                    .main-boat-free-summary-icon {
+                        height: getMax(105);
+                        margin-right: getMax(20);
+                        width: getMax(105);
+                    }
+                    .main-boat-free-summary-name {
+                        font-size: getMax(30);
+                        margin-bottom: getMax(0);
+                    }
+                    .main-boat-free-summary-port {
+                        font-size: getMax(22);
+                        margin-bottom: getMax(0);
+                    }
+                    .main-boat-free-summary-review {
+                        font-size: getMax(22);
+                        margin-bottom: getMax(0);
+                    }
+                }
+                .main-boat-free-information {
+                    margin-bottom: getMax(20);
+                    &.ex-line {
+                        margin-bottom: getMax(20);
+                        padding-bottom: getMax(20);
+                    }
+                    .main-boat-free-information-image {
+                        margin-right: getMax(20);
+                        width: getMax(246);
+                    }
+                    .main-boat-free-information-items {
+                        .main-boat-free-information-item {
+                            margin-bottom: getMax(0);
+                            > dt {
+                                font-size: getMax(24);
+                                margin-bottom: getMax(0);
+                            }
+                            > dd {
+                                font-size: getMax(24);
+                                margin-bottom: getMax(0);
+                            }
+                        }
+                    }
+                    .main-boat-free-information-pr {
+                        margin-right: getMax(38);
+                        .main-boat-free-information-pr-headline {
+                            font-size: getMax(24);
+                            margin-bottom: getMax(22);
+                            &::before {
+                                height: getMax(30);
+                                width: getMax(30);
+                            }
+                        }
+                        .main-boat-free-information-pr-comment {
+                            font-size: getMax(24);
+                            margin-bottom: getMax(22);
+                        }
+                        .main-boat-free-information-pr-tell {
+                            font-size: getMax(24);
+                            &::before {
+                                height: getMax(30);
+                                width: getMax(18);
+                            }
+                        }
+                    }
+                    .main-boat-free-information-call {
+                        min-width: getMax(182);
+                    }
+                }
+                .main-boat-free-detail {
+                    font-size: getMax(24);
+                    line-height: getMax(74);
+                    width: getMax(680);
+                }
+            }
+            .main-boat-other {
+                margin: 0 0 getMax(74) 0;
+                .main-boat-other-item {
+                    &:nth-child(odd) {
+                        padding: 0 getMax(12) getMax(24) getMax(0);
+                    }
+                    &:nth-child(even) {
+                        padding: 0 getMax(0) getMax(24) getMax(12);
+                    }
+                    .main-boat-other-item-inner {
+                        padding: 0 getMax(10);
+                    }
+                    .main-boat-other-item-name {
+                        font-size: getMax(26);
+                    }
+                    .main-boat-other-item-address {
+                        font-size: getMax(24);
+                    }
+                }
+            }
+        }
+        .main-condition {
+            margin-bottom: getMax(120);
+            .main-condition-headline {
+                font-size: getMax(30);
+                height: getMax(50);
+                margin-bottom: getMax(40);
+                margin-top: getMax(22);
+                > span {
+                    padding-right: getMax(76);
+                }
+                &::before {
+                    height: getMax(34);
+                    margin: 0 getMax(10);
+                    width: getMax(56);
+                }
+                &::after {
+                    height: getMax(8);
+                    padding-top: getMax(20);
+                    width: getMax(750);
+                }
+            }
+            .main-condition-explain {
+                font-size: getMax(24);
+                padding: 0 getMax(38);
+            }
+        }
+    }
+}

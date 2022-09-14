@@ -1,0 +1,88 @@
+<?php
+return [
+  // admin blade
+  "admin_head_top"    => "",
+  "admin_head_bottom" => "",
+  "admin_body_top"    => "",
+  "admin_body_bottom" => "",
+
+  "admin_form_create_upper_form"       => "",
+  "admin_form_create_form_hidden"      => "",
+  "admin_form_create_form_item_top"    => "",
+  "admin_form_create_form_item_bottom" => "",
+  "admin_form_item_bottom"             => "",
+  "admin_form_create_under_form"       => "",
+  "admin_form_create_bottom_section"   => "",
+  "admin_form_edit_upper_form"         => "",
+  "admin_form_edit_form_hidden"        => "",
+  "admin_form_edit_form_item_top"      => "",
+  "admin_form_edit_form_item_bottom"   => "",
+  "admin_form_edit_under_form"         => "",
+  "admin_form_edit_bottom_section"     => "",
+  "admin_form_list_bottom_section"     => "",
+
+  "admin_form_block_create_upper_form"        => "",
+  "admin_form_block_create_form_hidden"       => "",
+  "admin_form_block_create_form_item_top"     => "",
+  "admin_form_block_create_form_item_bottom"  => "",
+  "admin_form_block_create_under_form"        => "",
+  "admin_form_block_create_bottom_section"    => "",
+  "admin_form_block_create_form_type_option"  => "",
+  "admin_form_block_edit_upper_form"          => "",
+  "admin_form_block_edit_form_hidden"         => "",
+  "admin_form_block_edit_form_item_top"       => "",
+  "admin_form_block_edit_form_item_bottom"    => "",
+  "admin_form_block_edit_under_form"          => "",
+  "admin_form_block_edit_form_bottom_section" => "",
+  "admin_form_block_edit_form_type_option"    => "",
+  "admin_form_block_list_bottom_section"      => "",
+
+  "admin_form_item_edit_upper_form"       => "",
+  "admin_form_item_edit_form_hidden"      => "",
+  "admin_form_item_edit_form_item_top"    => "",
+  "admin_form_item_edit_form_item_bottom" => "",
+  "admin_form_item_edit_under_form"       => "",
+  "admin_form_item_edit_bottom_section"   => "",
+
+  "admin_history_upper_table"    => "",
+  "admin_history_under_table"    => "",
+  "admin_history_bottom_section" => "",
+
+  "admin_attach_file_upper_ul"       => "",
+  "admin_attach_file_under_ul"       => "",
+  "admin_attach_file_bottom_section" => "",
+
+  // ---------------------
+  "admin_login_upper_form"           => "",
+  "admin_login_form_hidden"          => "",
+  "admin_login_under_form"           => "",
+
+  "admin_rew_pass_upper_form"     => "",
+  "admin_rew_pass_form_hidden"    => "",
+  "admin_rew_pass_under_form"     => "",
+  "admin_rew_pass_bottom_section" => "",
+
+  "admin_setting_upper_form"          => "",
+  "admin_setting_form_hidden"         => "",
+  "admin_setting_under_form"          => "",
+  "admin_setting_form_bottom_section" => "",
+
+  "admin_upper_news"         => "",
+  "admin_under_news"         => "",
+  "admin_top_bottom_section" => "",
+
+  // front theme blade
+  "head_top"                 => "",
+  "head_bottom"              => "",
+  "body_top"                 => "",
+  "body_bottom"              => "",
+  "upper_form"               => "",
+  "under_form"               => "",
+  "form_hidden"              => "",
+  "form_item_top"            => "",
+  "form_item_bottom"         => "",
+  "in_fixed_bottom_top"      => "",
+  "in_fixed_bottom_bottom"   => "",
+  "in_header_top"            => "",
+  "in_header_bottom"         => "",
+];

@@ -1,0 +1,179 @@
+@startuml GYOKAKURYO_SHIGA
+
+!define MASTER_MARK_COLOR AAFFAA
+!define TRANSACTION_MARK_COLOR AFEEEE
+!define JOIN_TABLE_MARK_COLOR EBA4C7
+
+skinparam class {
+  BackgroundColor White
+  BorderColor Black
+  ArrowColor Black
+}
+
+entity "凡例" as marks <<M,MASTER_MARK_COLOR>> #LightGray {
+  + 主キー
+  # 外部キー
+  ~ 暗号化
+  - NULL許容
+  * MUST
+  作成日 [created_at: datetime]
+  更新日 [updated_at: datetime]
+}
+
+entity "権限\nroles" as roles <<M,MASTER_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * 権限名 [role_name: string]
+}
+
+entity "ユーザー\nusers" as users <<T,TRANSACTION_MARK_COLOR>> {
+  + id [PK]
+  ==
+  # 権限ID [role_id: integer]
+  * メールアドレス [email: string]
+  ~ パスワード [password: string]
+  * 名前 [name: string]
+  * かな [name_kana: string]
+  # 作成者ID [created_role_name_id: integer]
+  # 更新者ID [updated_role_name_id: integer]
+  timestamp [created_at: datetime]
+  timestamp [updated_at: datetime]
+}
+
+entity "貸船業者\nlenders" as lenders <<T,TRANSACTION_MARK_COLOR>> {
+  + id [PK]
+  ==
+  # ユーザーID [user_id: integer]
+  # 代表者名 [user_id: integer]
+  # かな [user_id: integer]
+  # 会員ステータス [member_status_id]
+  * 郵便番号 [zep_code: string]
+  # 都道府県 [prefecture_id: integer]
+  # 市町村区 [cities_id]
+  # 港 [prot_id]
+  地図のURL [map: string]
+  * 会社名 [company: string]
+  TEL [tel: integer]
+  認可証 [permission: img]
+  料金 [price: string]
+  保有船数 [boats: integer]
+  # 支払い方法 [payment_options_id: integer]
+  # プラン [plan_id: integer]
+  HP [url: string]
+  船長から一言 [caption_comment: text]
+  備考 [other: string]
+  # 作成者ID [created_users_id: integer]
+  # 更新者ID [updated_users_id: integer]
+  timestamp [created_at: datetime]
+  timestamp [updated_at: datetime]
+}
+' note bottom of clients : なんか説明かける
+
+entity "船\nboats" as boats <<T,TRANSACTION_MARK_COLOR>> {
+  + id [PK]
+  ==
+  # 船貸し業者 [lenders_id: integer]
+  * 船名 [name: string]
+  かな [name_kana: string]
+  業種 [operations: integer]
+  釣り方 [fishing_options_id: integer]
+  船の設備 [faclities_id: integer]
+  目標魚種 [fish_targets_id: integer]
+  最大定員 [capacity: string]
+  出船時刻 [departure: string]
+  釣り座の決め方 [fishing_point: string]
+  釣りエリア [fishing_area: string]
+  船の写真 [boat_img: img]
+  # 作成者ID [created_lenders_id: integer]
+  # 更新者ID [updated_lenders_id: integer]
+  timestamp [created_at: datetime]
+  timestamp [updated_at: datetime]
+}
+note bottom of boats :
+
+entity "貸船業者投稿\nlender_posts" as lender_posts <<T,TRANSACTION_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * タイトル [title: string]
+  # 釣り方 [fishing_options_id: integer]
+  # 釣果魚種 [targets_id: integer]
+  文章 [text: string]
+  写真 [img: string]
+}
+
+entity "貸船業者のステータス\nmember_status" as member_starus <<M,MASTER_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * ステータス名 [status_name: string]
+}
+
+entity "支払方法\payment_options" as payment_options <<M,MASTER_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * 支払方法名 [name: string]
+}
+
+entity "支払方法\operations" as operations <<M,MASTER_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * 業種名 [name: string]
+}
+
+entity "釣り方\fishing_options" as fishing_options <<M,MASTER_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * 釣り方名 [name: string]
+}
+
+entity "船設備\faclities" as faclities <<M,MASTER_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * 船設備名 [name: string]
+}
+
+entity "目標魚種\targets" as targets <<M,MASTER_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * 目標魚種名 [name: string]
+}
+
+entity "都道府県\prefectures" as prefectures <<M,MASTER_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * 県名 [name: string]
+  ひらがな [kana: string]
+  紹介 [introduction: text]
+}
+
+entity "市町村区名\cities" as cities <<M,MASTER_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * 市町村区名 [name: string]
+  ひらがな [kana: string]
+  紹介 [introduction: text]
+}
+
+entity "港名\ports" as ports <<T,TRANSACTION_MARK_COLOR>> {
+  + id [PK]
+  ==
+  * 港名 [name: string]
+  ひらがな [kana: string]
+  紹介 [introduction: text]
+}
+
+
+  ' roles |o---{ users
+  ' users |o---{ boat_lenders
+  ' boat_lenders |o---{ boats
+
+  ' notification_categories "1" --- "*" notifications
+  ' notification_open_targets "*" --- "1" notifications
+  ' notification_open_targets "1" --- "*" notification_read_boxes
+
+
+  @enduml
+
+
+  ' 作成者ID [created_user_id: integer]
+  ' 更新者ID [updated_user_id: integer]
+  ' 使用日時 [used_datetime: datetime]
